@@ -21,8 +21,4 @@
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Sections\Word\Lorem\Default\" />
-  </ItemGroup>
-
 </Project>
