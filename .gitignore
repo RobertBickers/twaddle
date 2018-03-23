@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/Twaddle/.vs
+/Twaddle/packages
+/Twaddle/Twaddle/bin
+/Twaddle/Twaddle/obj
+/Twaddle/Twaddle.Tests/bin
+/Twaddle/Twaddle.Tests/obj

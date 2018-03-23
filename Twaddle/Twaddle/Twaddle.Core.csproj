@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>Robert Bickers</Authors>
+    <Company>Code Treehouse</Company>
+    <Product>Twaddle</Product>
+    <Description>Package lets your create usernames, password, dates, phone numbers and random sentences.
+
+</Description>
+    <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
+    <PackageReleaseNotes />
+    <RootNamespace>CodeTreehouse.Twaddle</RootNamespace>
+    <AssemblyName>CodeTreehouse.Twaddle</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.1</Version>
+    <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Sections\Word\Lorem\Default\" />
+  </ItemGroup>
+
+</Project>
