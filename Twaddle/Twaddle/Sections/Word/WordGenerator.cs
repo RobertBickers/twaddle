@@ -33,7 +33,7 @@ namespace CodeTreehouse.Twaddle.Word
                 {
                     sentenceWords.Add(prepend);
                 }
-                else if (i == numberOfWords && !String.IsNullOrWhiteSpace(append))
+                else if (i == (numberOfWords -1)  && !String.IsNullOrWhiteSpace(append))
                 {
                     sentenceWords.Add(append);
                 }

@@ -27,5 +27,26 @@ namespace CodeTreehouse.Twaddle.Core.Tests
             Assert.IsNotNull(word);
             Assert.IsTrue(!String.IsNullOrEmpty(word));
         }
+
+        [TestMethod()]
+        public void MakeSentence_WithEndingString_SentenceFinishedWithSentence()
+        {
+            string endingWith = "and they all lived happily ever after";
+
+            string generatedWord = Twaddle.Word.GenerateSentence(400, null, endingWith);
+
+            Assert.IsTrue(generatedWord.EndsWith(endingWith), "Sentence does not end with the provided value");
+        }
+
+
+        [TestMethod()]
+        public void MakeSentence_WithStartingString_SentenceStartsWithSentence()
+        {
+            string startsWith = "Once upon a time";
+
+            string generatedWord = Twaddle.Word.GenerateSentence(400, startsWith);
+
+            Assert.IsTrue(generatedWord.StartsWith(startsWith), "Sentence does not start` with the provided value");
+        }
     }
 }
