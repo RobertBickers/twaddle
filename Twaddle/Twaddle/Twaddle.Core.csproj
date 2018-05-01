@@ -14,11 +14,12 @@
     <PackageReleaseNotes />
     <RootNamespace>CodeTreehouse.Twaddle</RootNamespace>
     <AssemblyName>CodeTreehouse.Twaddle</AssemblyName>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.2</Version>
     <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
+    <PackageId>Twaddle</PackageId>
   </PropertyGroup>
 
 </Project>

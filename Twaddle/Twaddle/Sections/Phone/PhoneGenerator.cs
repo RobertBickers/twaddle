@@ -1,7 +1,7 @@
-﻿using CodeTreehouse.Twaddle.Contracts;
+﻿using Bickers.Twaddle.Contracts;
 using System;
 
-namespace CodeTreehouse.Twaddle.Phone
+namespace Bickers.Twaddle.Phone
 {
     internal class PhoneGenerator : IPhoneGenerator
     {

@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Bickers.Twaddle.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CodeTreehouse.Twaddle.Core.Tests
+namespace Tests.UnitTesting.WordMaker
 {
     [TestClass]
     public class WordTests

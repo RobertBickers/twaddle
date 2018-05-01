@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace CodeTreehouse.Twaddle.Containers.Lorem
+namespace Bickers.Twaddle.Containers.Lorem
 {
     /// <summary>
     /// The default implementation for the word list container.

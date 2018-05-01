@@ -1,14 +1,13 @@
-﻿using CodeTreehouse.Twaddle.Containers;
-using CodeTreehouse.Twaddle.Containers.Lorem;
-using CodeTreehouse.Twaddle.Contracts;
+﻿using Bickers.Twaddle.Containers;
+using Bickers.Twaddle.Containers.Lorem;
+using Bickers.Twaddle.Contracts;
 using System;
 using System.Collections.Generic;
 
-namespace CodeTreehouse.Twaddle.Word
+namespace Bickers.Twaddle.Word
 {
     internal class WordGenerator : IWordGenerator
     {
-
         private static Random _wmRandomSeed = new Random();
 
         private static WordListContainer _container;

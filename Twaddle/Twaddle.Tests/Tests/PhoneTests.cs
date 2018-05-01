@@ -1,8 +1,8 @@
 ﻿using System;
-using CodeTreehouse.Twaddle.Core;
+using Bickers.Twaddle.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CodeTreehouse.Twaddle.Core.Tests
+namespace Tests.UnitTesting.WordMaker
 {
     [TestClass]
     public class PhoneTests

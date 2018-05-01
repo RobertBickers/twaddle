@@ -1,8 +1,8 @@
-﻿using CodeTreehouse.Twaddle.Contracts;
-using CodeTreehouse.Twaddle.Word;
+﻿using Bickers.Twaddle.Contracts;
+using Bickers.Twaddle.Word;
 using System;
 
-namespace CodeTreehouse.Twaddle.Credentials
+namespace Bickers.Twaddle.Credentials
 {
     internal class CredentialGenerator : ICredentialGenerator
     {
@@ -39,11 +39,13 @@ namespace CodeTreehouse.Twaddle.Credentials
             string normalCharacterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" + (allowSpecialCharacters ? "!\"£$%^&*()" : String.Empty);
 
             string password = String.Empty;
-            for (int i = minLength; i <= maxLength; i++)
+
+            int targetLength = _wmRandomSeed.Next(minLength, maxLength);
+
+            for (int i = 0; i <= targetLength; i++)
             {
                 password += normalCharacterList[_wmRandomSeed.Next(0, normalCharacterList.Length)];
             }
-
             return password;
         }
     }
