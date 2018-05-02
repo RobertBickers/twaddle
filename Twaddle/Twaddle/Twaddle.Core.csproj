@@ -11,15 +11,21 @@
 
 </Description>
     <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
-    <PackageReleaseNotes />
+    <PackageReleaseNotes>- Documentation updated and included in nuget package.
+- Namespace updated to be all under the 'Bickers' namespace
+- Fix in argument naming to be more descriptive on sentence generation</PackageReleaseNotes>
     <RootNamespace>CodeTreehouse.Twaddle</RootNamespace>
     <AssemblyName>CodeTreehouse.Twaddle</AssemblyName>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
+    <Version>1.0.4</Version>
     <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
     <PackageId>Twaddle</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\CodeTreehouse.Twaddle.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
