@@ -10,7 +10,7 @@ namespace Tests.UnitTesting.WordMaker
         [TestMethod()]
         public void GenerateColour_WithoutArgs_7CharacterStringReturned()
         {
-            int expectedNumberOfCharacters = 6;
+            int expectedNumberOfCharacters = 7;
             int actualNumberOfCharacters = -1;
 
 
