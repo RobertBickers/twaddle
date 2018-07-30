@@ -1,4 +1,5 @@
 ﻿
+using Bickers.Twaddle.Colour;
 using Bickers.Twaddle.Contracts;
 
 namespace Bickers.Twaddle.Core
@@ -50,6 +51,25 @@ namespace Bickers.Twaddle.Core
             }
         }
 
+
+        private static IColourGenerator _colourGenerator = null;
+        /// <summary>
+        /// Handles generation of colours
+        /// </summary>
+        public static IColourGenerator Colour
+        {
+            get
+            {
+                if (_colourGenerator == null)
+                    _colourGenerator = new ColourGenerator();
+
+                return _colourGenerator;
+            }
+
+        }
+
+
+
         private static IWordGenerator _wordGenerator = null;
         /// <summary>
         /// Handles generation of words and sentences
@@ -66,5 +86,6 @@ namespace Bickers.Twaddle.Core
                 return _wordGenerator;
             }
         }
+
     }
 }
