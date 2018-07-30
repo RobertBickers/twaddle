@@ -7,21 +7,20 @@
     <Authors>Robert Bickers</Authors>
     <Company>Code Treehouse</Company>
     <Product>Twaddle</Product>
-    <Description>Package lets your create usernames, password, dates, phone numbers and random sentences.
+    <Description>Package lets your create usernames, password, dates, phone numbers, colours and random sentences.
 
 </Description>
     <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
-    <PackageReleaseNotes>- Documentation updated and included in nuget package.
-- Namespace updated to be all under the 'Bickers' namespace
-- Fix in argument naming to be more descriptive on sentence generation</PackageReleaseNotes>
-    <RootNamespace>CodeTreehouse.Twaddle</RootNamespace>
-    <AssemblyName>CodeTreehouse.Twaddle</AssemblyName>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <FileVersion>1.0.0.4</FileVersion>
-    <Version>1.0.4</Version>
+    <PackageReleaseNotes>- Can now generate random colour strings in hex format</PackageReleaseNotes>
+    <RootNamespace>Bickers.Twaddle</RootNamespace>
+    <AssemblyName>Bickers.Twaddle</AssemblyName>
+    <AssemblyVersion>1.0.0.7</AssemblyVersion>
+    <FileVersion>1.0.0.7</FileVersion>
+    <Version>1.0.8</Version>
     <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
     <PackageId>Twaddle</PackageId>
+    <PackageIconUrl>https://raw.githubusercontent.com/RobertBickers/Twaddle/master/settings.png</PackageIconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
