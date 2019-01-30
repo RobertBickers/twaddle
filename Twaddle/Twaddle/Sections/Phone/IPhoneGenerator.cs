@@ -5,7 +5,7 @@
         /// <summary>
         /// Generates a random phone number.
         /// </summary>
-        /// <param name="prepend"></param>
+        /// <param name="prefix"></param>
         /// <returns></returns>
         string GeneratePhoneNumber(string prefix = "");
     }

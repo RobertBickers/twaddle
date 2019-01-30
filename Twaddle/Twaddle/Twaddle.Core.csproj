@@ -11,12 +11,12 @@
 
 </Description>
     <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
-    <PackageReleaseNotes>- Can now generate random colour strings in hex format</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <RootNamespace>Bickers.Twaddle</RootNamespace>
     <AssemblyName>Bickers.Twaddle</AssemblyName>
-    <AssemblyVersion>1.0.0.7</AssemblyVersion>
-    <FileVersion>1.0.0.7</FileVersion>
-    <Version>1.0.8</Version>
+    <AssemblyVersion>1.0.0.9</AssemblyVersion>
+    <FileVersion>1.0.0.9</FileVersion>
+    <Version>1.0.9</Version>
     <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
     <PackageId>Twaddle</PackageId>
