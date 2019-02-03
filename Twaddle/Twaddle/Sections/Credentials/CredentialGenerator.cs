@@ -32,9 +32,11 @@ namespace Bickers.Twaddle.Credentials
         {
             //Guard
             if (minLength < 1)
-                throw new ArgumentException("Minimum Character Length cannot be less that 1.", "minLength");
+                throw new ArgumentException($"{nameof(minLength)} canot be less  than 1.", nameof(minLength));
             else if (maxLength < 1)
-                throw new ArgumentException("Maximum character list cannot be less that 1.", "maxLength");
+                throw new ArgumentException($"{nameof(maxLength)} cannot be less that 1.", nameof(maxLength));
+            else if (maxLength < minLength)
+                throw new ArgumentException($"{nameof(maxLength)} cannot be less than {nameof(minLength)}.", nameof(maxLength));
 
             string normalCharacterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" + (allowSpecialCharacters ? "!\"£$%^&*()" : String.Empty);
 

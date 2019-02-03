@@ -1,6 +1,8 @@
 ﻿
 using Bickers.Twaddle.Colour;
 using Bickers.Twaddle.Contracts;
+using Bickers.Twaddle.Sections.Contracts;
+using Bickers.Twaddle.Sections.Name;
 
 namespace Bickers.Twaddle.Core
 {
@@ -87,5 +89,20 @@ namespace Bickers.Twaddle.Core
             }
         }
 
+
+        private static INameGenerator _nameGenerator = null;
+
+        public static INameGenerator Name
+        {
+            get
+            {
+                if (_nameGenerator == null)
+                    _nameGenerator = new NameGenerator();
+
+
+                return _nameGenerator;
+            }
+
+        }
     }
 }

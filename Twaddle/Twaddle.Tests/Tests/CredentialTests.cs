@@ -82,6 +82,19 @@ namespace Tests.UnitTesting.WordMaker
 
 
         [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), "Max length less than min length args allowed")]
+        public void GeneratePassword_MaxCharactersLessThanMinCharacters_ExceptionThrown()
+        {
+            int minCharacters = 10;
+            int maxCharacters = 9;
+
+            string password = Twaddle.Profile.GeneratePassword(true, maxCharacters, minCharacters);
+        }
+
+
+
+
+        [TestMethod()]
         [ExpectedException(typeof(ArgumentException), "Method allowed user to enter 0 as min characters.")]
         public void GeneratePassword_WithMinLength0_ExceptionThrown()
         {
