@@ -2,7 +2,7 @@
 
 namespace Bickers.Twaddle.Contracts
 {
-    public  interface IDateGenerator
+    public interface IDateGenerator
     {
         /// <summary>
         /// Generates a random date between the start and end date

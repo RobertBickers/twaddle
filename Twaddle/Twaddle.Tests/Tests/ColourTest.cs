@@ -13,16 +13,13 @@ namespace Tests.UnitTesting.WordMaker
             int expectedNumberOfCharacters = 7;
             int actualNumberOfCharacters = -1;
 
-
             //Act
             string colourString = Twaddle.Colour.GenerateColourString();
 
             actualNumberOfCharacters = colourString.Length;
 
-
             //Assert
             Assert.IsTrue(colourString.Length == expectedNumberOfCharacters, "Colour string does not have the expected number of characters");
-
         }
 
         [TestMethod()]
@@ -58,12 +55,6 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(color.R != 0);
             Assert.IsTrue(color.G != 0);
             Assert.IsTrue(color.B != 0);
-
-
         }
-
-
-
-
     }
 }

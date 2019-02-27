@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Bickers.Twaddle.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Bickers.Twaddle.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.UnitTesting.WordMaker
 {
-
-
     [TestClass]
     public class CredentialTest
     {
@@ -19,7 +17,6 @@ namespace Tests.UnitTesting.WordMaker
             string endDomain = "@generatedTestMail.com";
 
             string emailAddress = Twaddle.Profile.GenerateEmail(endDomain, true);
-
 
             Assert.IsNotNull(emailAddress, "Returned email address returned null");
             Assert.IsTrue(emailAddress.EndsWith(endDomain), "Email address does not end with the domain provided as expected");
@@ -66,10 +63,7 @@ namespace Tests.UnitTesting.WordMaker
             //}
             //sw.Stop();
             //Debug.WriteLine(sw.ElapsedMilliseconds);
-
         }
-
-
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException), "Method allowed user to enter 0 as max characters.")]
@@ -79,7 +73,6 @@ namespace Tests.UnitTesting.WordMaker
 
             string password = Twaddle.Profile.GeneratePassword(true, maxCharacters);
         }
-
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException), "Max length less than min length args allowed")]
@@ -91,9 +84,6 @@ namespace Tests.UnitTesting.WordMaker
             string password = Twaddle.Profile.GeneratePassword(true, maxCharacters, minCharacters);
         }
 
-
-
-
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException), "Method allowed user to enter 0 as min characters.")]
         public void GeneratePassword_WithMinLength0_ExceptionThrown()
@@ -102,8 +92,5 @@ namespace Tests.UnitTesting.WordMaker
 
             string password = Twaddle.Profile.GeneratePassword(true, 100, minCharacters);
         }
-
-
-
     }
 }

@@ -39,7 +39,6 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(generatedWord.EndsWith(endingWith), "Sentence does not end with the provided value");
         }
 
-
         [TestMethod()]
         public void MakeSentence_WithStartingString_SentenceStartsWithSentence()
         {
@@ -54,14 +53,12 @@ namespace Tests.UnitTesting.WordMaker
         [DataRow("first", "second", 1)]
         [DataRow("first", "second", 2)]
         [DataRow("first", "second", 3)]
-
         public void MakeSentence_WordLengthLessThanProvidedAfterSentencePrependAndAppend_NumberOfWordsStillGenerated(string firstWord, string secondWord, int numberOfWords)
         {
             string generatedSentence = Twaddle.Word.GenerateSentence(numberOfWords, firstWord, secondWord);
 
             int actualNumberOfWords = generatedSentence.Split(' ').Length;
             Assert.IsTrue(actualNumberOfWords == numberOfWords, $"Actual number of words returned: {actualNumberOfWords}. Expected: {numberOfWords}");
-
         }
     }
 }
