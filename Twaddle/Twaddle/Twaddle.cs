@@ -1,14 +1,12 @@
-﻿
-using Bickers.Twaddle.Colour;
+﻿using Bickers.Twaddle.Colour;
 using Bickers.Twaddle.Contracts;
-using Bickers.Twaddle.Sections.Contracts;
-using Bickers.Twaddle.Sections.Name;
 
 namespace Bickers.Twaddle.Core
 {
     public static class Twaddle
     {
         private static ICredentialGenerator _credentialGenerator = null;
+
         /// <summary>
         /// Handles generation of email addresses and passwords
         /// </summary>
@@ -24,6 +22,7 @@ namespace Bickers.Twaddle.Core
         }
 
         private static IDateGenerator _dateGenerator = null;
+
         /// <summary>
         /// Handles generation of dates
         /// </summary>
@@ -39,6 +38,7 @@ namespace Bickers.Twaddle.Core
         }
 
         private static IPhoneGenerator _phoneGenerator = null;
+
         /// <summary>
         /// Handles generation of phone numbers
         /// </summary>
@@ -53,8 +53,8 @@ namespace Bickers.Twaddle.Core
             }
         }
 
-
         private static IColourGenerator _colourGenerator = null;
+
         /// <summary>
         /// Handles generation of colours
         /// </summary>
@@ -67,12 +67,10 @@ namespace Bickers.Twaddle.Core
 
                 return _colourGenerator;
             }
-
         }
 
-
-
         private static IWordGenerator _wordGenerator = null;
+
         /// <summary>
         /// Handles generation of words and sentences
         /// </summary>
@@ -87,22 +85,6 @@ namespace Bickers.Twaddle.Core
 
                 return _wordGenerator;
             }
-        }
-
-
-        private static INameGenerator _nameGenerator = null;
-
-        public static INameGenerator Name
-        {
-            get
-            {
-                if (_nameGenerator == null)
-                    _nameGenerator = new NameGenerator();
-
-
-                return _nameGenerator;
-            }
-
         }
     }
 }

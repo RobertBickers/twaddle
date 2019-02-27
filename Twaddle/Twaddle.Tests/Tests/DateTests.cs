@@ -47,8 +47,5 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(generatedDate > startDate);
             Assert.IsTrue(generatedDate < endDate);
         }
-
-  
-
     }
 }

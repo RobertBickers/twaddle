@@ -7,7 +7,6 @@ namespace Bickers.Twaddle.Colour
     /// </summary>
     public interface IColourGenerator
     {
-
         /// <summary>
         /// Generates a string colour type
         /// </summary>
@@ -20,5 +19,4 @@ namespace Bickers.Twaddle.Colour
         /// <returns></returns>
         Color GenerateColour();
     }
-
 }

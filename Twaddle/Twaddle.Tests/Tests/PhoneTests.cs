@@ -1,5 +1,4 @@
-﻿using System;
-using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.UnitTesting.WordMaker
@@ -7,7 +6,6 @@ namespace Tests.UnitTesting.WordMaker
     [TestClass]
     public class PhoneTests
     {
-
         [TestMethod()]
         public void MakePhoneNumber_WithoutPrepend_PhoneNumberGenerated()
         {
@@ -29,6 +27,5 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(phoneNumber.Length == 11, "Phone number has incorrect number of characters");
             Assert.IsTrue(phoneNumber.StartsWith(prepend));
         }
-
     }
 }

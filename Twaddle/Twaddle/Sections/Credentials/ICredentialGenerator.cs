@@ -11,7 +11,6 @@
         /// <returns></returns>
         string GeneratePassword(bool allowSpecialCharacters, int maxLength, int minLength = 6);
 
-
         /// <summary>
         /// Generates a random email address using the domain provided
         /// </summary>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using System.Text;
 
 namespace Bickers.Twaddle.Sections.Colour
 {
@@ -29,7 +27,6 @@ namespace Bickers.Twaddle.Sections.Colour
             b = (byte)(packedValue >> 8);
         }
 
-
         private static string ToRgbaHex(string hex)
         {
             hex = hex.StartsWith("#") ? hex.Substring(1) : hex;
@@ -55,11 +52,7 @@ namespace Bickers.Twaddle.Sections.Colour
             string blue = char.ToString(hex[2]);
             string alpha = hex.Length == 3 ? "F" : char.ToString(hex[3]);
 
-
             return string.Concat(red, red, green, green, blue, blue, alpha, alpha);
         }
-
-
-
     }
 }
