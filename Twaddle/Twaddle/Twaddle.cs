@@ -10,7 +10,7 @@ namespace Bickers.Twaddle.Core
         /// <summary>
         /// Handles generation of email addresses and passwords
         /// </summary>
-        public static Contracts.ICredentialGenerator Profile
+        public static ICredentialGenerator Profile
         {
             get
             {
@@ -26,7 +26,7 @@ namespace Bickers.Twaddle.Core
         /// <summary>
         /// Handles generation of dates
         /// </summary>
-        public static Contracts.IDateGenerator Date
+        public static IDateGenerator Date
         {
             get
             {
@@ -42,7 +42,7 @@ namespace Bickers.Twaddle.Core
         /// <summary>
         /// Handles generation of phone numbers
         /// </summary>
-        public static Contracts.IPhoneGenerator Phone
+        public static IPhoneGenerator Phone
         {
             get
             {
@@ -74,7 +74,7 @@ namespace Bickers.Twaddle.Core
         /// <summary>
         /// Handles generation of words and sentences
         /// </summary>
-        public static Contracts.IWordGenerator Word
+        public static IWordGenerator Word
         {
             get
             {
