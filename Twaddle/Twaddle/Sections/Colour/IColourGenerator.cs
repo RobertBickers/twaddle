@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Bickers.Twaddle.Colour
+namespace Bickers.Twaddle.Contracts
 {
     /// <summary>
     /// Handles the generation of colours
