@@ -11,20 +11,29 @@
 
 </Description>
     <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>Now with injectable, overridable configuration classes.</PackageReleaseNotes>
     <RootNamespace>Bickers.Twaddle</RootNamespace>
     <AssemblyName>Bickers.Twaddle</AssemblyName>
     <AssemblyVersion>1.0.0.9</AssemblyVersion>
     <FileVersion>1.0.0.9</FileVersion>
-    <Version>1.0.9</Version>
+    <Version>1.1.0</Version>
     <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
     <PackageId>Twaddle</PackageId>
     <PackageIconUrl>https://raw.githubusercontent.com/RobertBickers/Twaddle/master/settings.png</PackageIconUrl>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <Copyright>Copyright ©2018 Robert Bickers</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\CodeTreehouse.Twaddle.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

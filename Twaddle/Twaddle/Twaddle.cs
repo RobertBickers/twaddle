@@ -9,7 +9,7 @@ namespace Bickers.Twaddle.Core
 
         static Twaddle()
         {
-            _twaddleConfiguration = new DefaultTwaddleConfiguration();
+            _twaddleConfiguration = new TwaddleConfiguration();
         }
 
 
@@ -21,7 +21,7 @@ namespace Bickers.Twaddle.Core
 
 
         /// <summary>
-        /// Handles generation of email addresses and passwords
+        /// Handles generation of email addresses and passwords 
         /// </summary>
         public static ICredentialGenerator Profile => _twaddleConfiguration.Credential;
 
