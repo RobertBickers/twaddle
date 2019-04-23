@@ -6,14 +6,14 @@ namespace Bickers.Twaddle.Sections.Colour
 {
     internal class ColourHandler
     {
-        public static Color FromHex(string hex)
+        internal static Color FromHex(string hex)
         {
             FromHex(hex, out var a, out var r, out var g, out var b);
 
             return Color.FromArgb(a, r, g, b);
         }
 
-        public static void FromHex(string hex, out byte a, out byte r, out byte g, out byte b)
+        internal static void FromHex(string hex, out byte a, out byte r, out byte g, out byte b)
         {
             hex = ToRgbaHex(hex);
             if (hex == null || !uint.TryParse(hex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var packedValue))
@@ -27,7 +27,7 @@ namespace Bickers.Twaddle.Sections.Colour
             b = (byte)(packedValue >> 8);
         }
 
-        private static string ToRgbaHex(string hex)
+        internal static string ToRgbaHex(string hex)
         {
             hex = hex.StartsWith("#") ? hex.Substring(1) : hex;
 

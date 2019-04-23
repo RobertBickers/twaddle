@@ -1,90 +1,49 @@
 ﻿using Bickers.Twaddle.Colour;
+using Bickers.Twaddle.Configuration;
 using Bickers.Twaddle.Contracts;
 
 namespace Bickers.Twaddle.Core
 {
     public static class Twaddle
     {
-        private static ICredentialGenerator _credentialGenerator = null;
 
-        /// <summary>
-        /// Handles generation of email addresses and passwords
-        /// </summary>
-        public static Contracts.ICredentialGenerator Profile
+        static Twaddle()
         {
-            get
-            {
-                if (_credentialGenerator == null)
-                    _credentialGenerator = new Credentials.CredentialGenerator();
-
-                return _credentialGenerator;
-            }
+            _twaddleConfiguration = new TwaddleConfiguration();
         }
 
-        private static IDateGenerator _dateGenerator = null;
+
+        private static ITwaddleConfiguration _twaddleConfiguration = null;
+        public static void OverrideConfiguration(ITwaddleConfiguration configuration)
+        {
+            _twaddleConfiguration = configuration;
+        }
+
+
+        /// <summary>
+        /// Handles generation of email addresses and passwords 
+        /// </summary>
+        public static ICredentialGenerator Profile => _twaddleConfiguration.Credential;
 
         /// <summary>
         /// Handles generation of dates
         /// </summary>
-        public static Contracts.IDateGenerator Date
-        {
-            get
-            {
-                if (_dateGenerator == null)
-                    _dateGenerator = new Date.DateGenerator();
-
-                return _dateGenerator;
-            }
-        }
-
-        private static IPhoneGenerator _phoneGenerator = null;
+        public static IDateGenerator Date => _twaddleConfiguration.Date;
 
         /// <summary>
         /// Handles generation of phone numbers
         /// </summary>
-        public static Contracts.IPhoneGenerator Phone
-        {
-            get
-            {
-                if (_phoneGenerator == null)
-                    _phoneGenerator = new Phone.PhoneGenerator();
+        public static IPhoneGenerator Phone => _twaddleConfiguration.Phone;
 
-                return _phoneGenerator;
-            }
-        }
-
-        private static IColourGenerator _colourGenerator = null;
 
         /// <summary>
         /// Handles generation of colours
         /// </summary>
-        public static IColourGenerator Colour
-        {
-            get
-            {
-                if (_colourGenerator == null)
-                    _colourGenerator = new ColourGenerator();
-
-                return _colourGenerator;
-            }
-        }
-
-        private static IWordGenerator _wordGenerator = null;
+        public static IColourGenerator Colour => _twaddleConfiguration.Colour;
 
         /// <summary>
         /// Handles generation of words and sentences
         /// </summary>
-        public static Contracts.IWordGenerator Word
-        {
-            get
-            {
-                if (_wordGenerator == null)
-                    _wordGenerator = new Word.WordGenerator();
-
-                _wordGenerator.Setup(new Containers.Lorem.LoremWordContainer());
-
-                return _wordGenerator;
-            }
-        }
+        public static IWordGenerator Word => _twaddleConfiguration.Word;
     }
 }

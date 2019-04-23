@@ -1,4 +1,5 @@
-﻿using Bickers.Twaddle.Sections.Colour;
+﻿using Bickers.Twaddle.Contracts;
+using Bickers.Twaddle.Sections.Colour;
 using System;
 using System.Drawing;
 
