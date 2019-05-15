@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests\ColourTest.cs" />
+    <Compile Include="Tests\NameTests.cs" />
     <Compile Include="Tests\WordTests.cs" />
     <Compile Include="Tests\CredentialTests.cs" />
     <Compile Include="Tests\PhoneTests.cs" />

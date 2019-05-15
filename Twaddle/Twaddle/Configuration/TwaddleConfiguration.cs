@@ -2,6 +2,7 @@
 using Bickers.Twaddle.Contracts;
 using Bickers.Twaddle.Credentials;
 using Bickers.Twaddle.Date;
+using Bickers.Twaddle.Names;
 using Bickers.Twaddle.Phone;
 using Bickers.Twaddle.Word;
 using System;
@@ -18,11 +19,14 @@ namespace Bickers.Twaddle.Configuration
         private static readonly Lazy<PhoneGenerator> phoneLazyValue = new Lazy<PhoneGenerator>(() => new PhoneGenerator());
         private static readonly Lazy<ColourGenerator> colourLazyValue = new Lazy<ColourGenerator>(() => new ColourGenerator());
         private static readonly Lazy<WordGenerator> wordLazyValue = new Lazy<WordGenerator>(() => new WordGenerator());
+        private static readonly Lazy<NameGenerator> nameLazyValue = new Lazy<NameGenerator>(() => new NameGenerator());
 
         public virtual ICredentialGenerator Credential => credentialLazyValue.Value;
         public virtual IDateGenerator Date => dateLazyValue.Value;
         public virtual IPhoneGenerator Phone => phoneLazyValue.Value;
         public virtual IColourGenerator Colour => colourLazyValue.Value;
         public virtual IWordGenerator Word => wordLazyValue.Value;
+
+        public INameGenerator Name => nameLazyValue.Value;
     }
 }
