@@ -34,5 +34,11 @@ namespace Bickers.Twaddle.Configuration
         /// Handles the generation of words and sentences
         /// </summary>
         IWordGenerator Word { get; }
+
+
+        /// <summary>
+        /// Handles the generation of names
+        /// </summary>
+        INameGenerator Name { get; }
     }
 }

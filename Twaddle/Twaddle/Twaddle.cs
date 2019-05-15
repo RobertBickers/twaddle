@@ -45,5 +45,8 @@ namespace Bickers.Twaddle.Core
         /// Handles generation of words and sentences
         /// </summary>
         public static IWordGenerator Word => _twaddleConfiguration.Word;
+
+        public static INameGenerator Name => _twaddleConfiguration.Name;
+
     }
 }
