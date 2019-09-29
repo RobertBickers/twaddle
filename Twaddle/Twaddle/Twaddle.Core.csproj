@@ -11,18 +11,20 @@
 
 </Description>
     <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
-    <PackageReleaseNotes>Now with the ability to generate names. First names, last names, full names.</PackageReleaseNotes>
+    <PackageReleaseNotes>Can now get random enum values</PackageReleaseNotes>
     <RootNamespace>Bickers.Twaddle</RootNamespace>
     <AssemblyName>Bickers.Twaddle</AssemblyName>
     <AssemblyVersion>1.0.0.9</AssemblyVersion>
     <FileVersion>1.0.0.9</FileVersion>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RobertBickers/Twaddle</RepositoryUrl>
     <PackageId>Twaddle</PackageId>
     <PackageIconUrl>https://raw.githubusercontent.com/RobertBickers/Twaddle/master/settings.png</PackageIconUrl>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Copyright>Copyright ©2018 Robert Bickers</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>twaddle-sign.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

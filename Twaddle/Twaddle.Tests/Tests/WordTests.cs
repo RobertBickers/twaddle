@@ -1,4 +1,5 @@
-﻿using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Containers.Lorem;
+using Bickers.Twaddle.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -9,6 +10,14 @@ namespace Tests.UnitTesting.WordMaker
     [TestClass]
     public class WordTests
     {
+
+        [TestMethod()]
+        public void MakeSentence_WithOverrideWordListFromTextFile()
+        {
+            Twaddle.Word.Setup(new FileSystemWordContainer("/"));
+        }
+
+
         [TestMethod()]
         public void MakeSentence_With10Words_SentenceWith10WordMade()
         {
