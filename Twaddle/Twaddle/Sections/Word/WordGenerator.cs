@@ -22,6 +22,17 @@ namespace Bickers.Twaddle.Word
             _container = wordListContainer;
         }
 
+
+
+        public T GenerateRandomEnum<T>() where T : struct, IConvertible
+        {
+            Array values = Enum.GetValues(typeof(T));
+            Random random = new Random();
+            T randomEnumValue = (T)values.GetValue(random.Next(values.Length));
+
+            return randomEnumValue;
+        }
+
         public string GenerateSentence(int numberOfWords, string prepend = "", string append = "")
         {
             List<string> sentenceWords = new List<string>();
