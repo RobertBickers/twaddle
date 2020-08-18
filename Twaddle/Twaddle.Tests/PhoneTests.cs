@@ -1,12 +1,12 @@
 ﻿using Bickers.Twaddle.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Tests.UnitTesting.WordMaker
 {
-    [TestClass]
+    [TestFixture]
     public class PhoneTests
     {
-        [TestMethod()]
+        [Test()]
         public void MakePhoneNumber_WithoutPrepend_PhoneNumberGenerated()
         {
             string phoneNumber = Twaddle.Phone.GeneratePhoneNumber();
@@ -14,7 +14,7 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(phoneNumber.Length == 11, "Phone number has invalid number of characters");
         }
 
-        [TestMethod()]
+        [Test()]
         public void MakePhoneNumber_WithPrepend_PhoneNumberGeneratedWithPrepend()
         {
             //Arrange
