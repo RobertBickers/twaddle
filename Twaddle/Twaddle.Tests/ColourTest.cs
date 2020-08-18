@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Drawing;
 
-namespace Tests.UnitTesting.WordMaker
+namespace Tests.UnitTesting.ColorMaker
 {
     [TestFixture]
     public class ColourTest
@@ -31,11 +31,11 @@ namespace Tests.UnitTesting.WordMaker
         }
 
         [Test()]
-        public void Generatecolour_WithoutArgs_ColourCanBeParsedBySystemDrawingColour()
+        public void GenerateColour_WithoutArgs_ColourCanBeParsedBySystemDrawingColour()
         {
             string colourString = Twaddle.Colour.GenerateColourString();
 
-            Color convertedColour = System.Drawing.ColorTranslator.FromHtml(colourString);
+            Color convertedColour = ((Color)new ColorConverter().ConvertFromString(colourString));
 
             Assert.IsFalse(convertedColour.IsEmpty, "Colour string has not been generated");
             Assert.IsTrue(convertedColour.R > 0, "Red channel doesn't have any value");

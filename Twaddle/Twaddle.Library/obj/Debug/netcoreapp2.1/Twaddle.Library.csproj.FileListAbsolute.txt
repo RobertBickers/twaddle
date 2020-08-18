@@ -1,0 +1,9 @@
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/bin/Debug/netcoreapp2.1/Twaddle.Library.deps.json
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/bin/Debug/netcoreapp2.1/Twaddle.Library.dll
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/bin/Debug/netcoreapp2.1/Twaddle.Library.pdb
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/obj/Debug/netcoreapp2.1/Twaddle.Library.csprojAssemblyReference.cache
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/obj/Debug/netcoreapp2.1/Twaddle.Library.AssemblyInfoInputs.cache
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/obj/Debug/netcoreapp2.1/Twaddle.Library.AssemblyInfo.cs
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/obj/Debug/netcoreapp2.1/Twaddle.Library.csproj.CoreCompileInputs.cache
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/obj/Debug/netcoreapp2.1/Twaddle.Library.dll
+/Users/robert/Documents/GitHub/twaddle/Twaddle/Twaddle.Library/obj/Debug/netcoreapp2.1/Twaddle.Library.pdb

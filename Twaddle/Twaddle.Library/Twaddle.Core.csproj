@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Twaddle</PackageId>
+    <PackageVersion>2.0</PackageVersion>
+    <Authors>Robert Bickers</Authors>
+    <Copyright>Copyright 2020 Robert Bickers</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/Codetreehouse/Twaddle/master/settings.png</PackageIconUrl>
+    <PackageLicenseUrl>license.txt</PackageLicenseUrl>
+    <Owners>Robert Bickers</Owners>
+    <PackageProjectUrl>https://github.com/RobertBickers/Twaddle</PackageProjectUrl>
+    <PackageReleaseNotes>Updated to .NET Core 2.1</PackageReleaseNotes>
+    <PackageTags>word maker, twaddle, string generator, password generator</PackageTags>
+    <Title>Twaddle</Title>
+    <Description>Generate random data on the fly. Words, sentences, names, phone numbers, and more.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Sections\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

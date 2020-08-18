@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Linq;
 
-namespace Tests.UnitTesting.WordMaker
+namespace Tests.UnitTesting.NameMaker
 {
     [TestFixture]
     public class NameTests

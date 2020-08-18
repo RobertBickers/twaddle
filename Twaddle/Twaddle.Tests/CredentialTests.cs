@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Tests.UnitTesting.WordMaker
+namespace Tests.UnitTesting.CredentialMaker
 {
     [TestFixture]
     public class CredentialTest

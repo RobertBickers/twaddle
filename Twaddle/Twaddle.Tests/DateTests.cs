@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System;
 
-namespace Tests.UnitTesting.WordMaker
+namespace Tests.UnitTesting.DateMaker
 {
     [TestFixture]
     public class DateTests
