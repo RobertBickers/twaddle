@@ -1,5 +1,5 @@
 ﻿using Bickers.Twaddle.Core;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Tests.UnitTesting.WordMaker
 {
-    [TestFixture]
+    [TestClass]
     public class CredentialTest
     {
-        [Test()]
+        [TestMethod()]
         public void GenerateEmail_ProvidingDomain_ReturnValueEndsWithDomain()
         {
+            //Arrange
             string endDomain = "@generatedTestMail.com";
 
             string emailAddress = Twaddle.Profile.GenerateEmail(endDomain, true);
@@ -21,16 +22,17 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(emailAddress.EndsWith(endDomain), "Email address does not end with the domain provided as expected");
         }
 
-        [Test()]
+        [TestMethod()]
         public void GenerateEmail_WithoutDomain_ReturnValueHasValidEmail()
         {
+            //Arrange
             string emailAddress = Twaddle.Profile.GenerateEmail(null, true);
 
             Assert.IsNotNull(emailAddress, "Returned email address returned null");
             Assert.IsTrue(emailAddress.EndsWith("twaddlemail.com"), "Email address does not end with the domain provided as expected");
         }
 
-        [Test()]
+        [TestMethod()]
         public void GeneratePassword_WithMaxPasswordLength100AndMin20_PasswordGeneratedWithMoreThan20LessThan100()
         {
             int maxCharacters = 100;
@@ -48,31 +50,47 @@ namespace Tests.UnitTesting.WordMaker
             });
             sw.Stop();
             Debug.WriteLine(sw.ElapsedMilliseconds);
+
+            //Debug.WriteLine("Restarting stopwatch...");
+            //sw.Restart();
+            //for (int i = 0; i < 10000; i++)
+            //{
+            //    string password = Twaddle.Profile.GeneratePassword(true, maxCharacters, minCharacters);
+            //    Debug.WriteLine("Standard - Generated password length: " + password.Length);
+            //    Assert.IsTrue(password.Length >= 20 && password.Length <= 100, "Password was generated with length out of bounds");
+
+            //    Thread.Sleep(10);
+            //}
+            //sw.Stop();
+            //Debug.WriteLine(sw.ElapsedMilliseconds);
         }
 
-        [Test()]
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), "Method allowed user to enter 0 as max characters.")]
         public void GeneratePassword_WithMaxLength0_ExceptionThrown()
         {
             int maxCharacters = 0;
 
-            Assert.Throws<ArgumentException>(() => Twaddle.Profile.GeneratePassword(true, maxCharacters));
+            string password = Twaddle.Profile.GeneratePassword(true, maxCharacters);
         }
 
-        [Test()]
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), "Max length less than min length args allowed")]
         public void GeneratePassword_MaxCharactersLessThanMinCharacters_ExceptionThrown()
         {
             int minCharacters = 10;
             int maxCharacters = 9;
 
-            Assert.Throws<ArgumentException>(() => Twaddle.Profile.GeneratePassword(true, maxCharacters, minCharacters));
+            string password = Twaddle.Profile.GeneratePassword(true, maxCharacters, minCharacters);
         }
 
-        [Test()]
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), "Method allowed user to enter 0 as min characters.")]
         public void GeneratePassword_WithMinLength0_ExceptionThrown()
         {
             int minCharacters = 0;
 
-            Assert.Throws<ArgumentException>(() => Twaddle.Profile.GeneratePassword(true, 100, minCharacters));
+            string password = Twaddle.Profile.GeneratePassword(true, 100, minCharacters);
         }
     }
 }

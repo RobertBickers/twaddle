@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twaddle.Core", "Twaddle\Twaddle.Core.csproj", "{DAE0393A-1E9B-4170-B21D-ABB88AA1F3CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twaddle.Tests", "Twaddle.Tests\Twaddle.Tests.csproj", "{A13C7B95-4F3D-405B-AC68-1573A3977007}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twaddle.UnitTests", "Twaddle.Tests\Twaddle.UnitTests.csproj", "{D7B042E7-0CF7-4BC3-8FC0-5D51CDC1857D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{DAE0393A-1E9B-4170-B21D-ABB88AA1F3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAE0393A-1E9B-4170-B21D-ABB88AA1F3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAE0393A-1E9B-4170-B21D-ABB88AA1F3CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A13C7B95-4F3D-405B-AC68-1573A3977007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A13C7B95-4F3D-405B-AC68-1573A3977007}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A13C7B95-4F3D-405B-AC68-1573A3977007}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A13C7B95-4F3D-405B-AC68-1573A3977007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7B042E7-0CF7-4BC3-8FC0-5D51CDC1857D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7B042E7-0CF7-4BC3-8FC0-5D51CDC1857D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7B042E7-0CF7-4BC3-8FC0-5D51CDC1857D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7B042E7-0CF7-4BC3-8FC0-5D51CDC1857D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
