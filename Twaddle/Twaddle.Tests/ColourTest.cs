@@ -1,39 +1,36 @@
 ﻿using Bickers.Twaddle.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Drawing;
 
 namespace Tests.UnitTesting.WordMaker
 {
-    [TestClass]
+    [TestFixture]
     public class ColourTest
     {
-        [TestMethod()]
+        [Test()]
         public void GenerateColour_WithoutArgs_7CharacterStringReturned()
         {
             int expectedNumberOfCharacters = 7;
             int actualNumberOfCharacters = -1;
 
-            //Act
             string colourString = Twaddle.Colour.GenerateColourString();
 
             actualNumberOfCharacters = colourString.Length;
 
-            //Assert
             Assert.IsTrue(colourString.Length == expectedNumberOfCharacters, "Colour string does not have the expected number of characters");
         }
 
-        [TestMethod()]
+        [Test()]
         public void GenerateColour_WithoutArgs_StringStartsWithHash()
         {
             string expectedStartingCharacter = "#";
 
             string colourString = Twaddle.Colour.GenerateColourString();
 
-            //Assert
             Assert.IsTrue(colourString.StartsWith(expectedStartingCharacter), "Colour string does not start with a hash (#) character");
         }
 
-        [TestMethod()]
+        [Test()]
         public void Generatecolour_WithoutArgs_ColourCanBeParsedBySystemDrawingColour()
         {
             string colourString = Twaddle.Colour.GenerateColourString();
@@ -46,7 +43,7 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(convertedColour.B > 0, "Blue channel doesn't have any value");
         }
 
-        [TestMethod()]
+        [Test()]
         public void GenerateColour_WithoutArgs_ColorReturned()
         {
             Color color = Twaddle.Colour.GenerateColour();

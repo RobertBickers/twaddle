@@ -9,8 +9,9 @@ namespace Bickers.Twaddle.Containers.Lorem
     /// </summary>
     public class FileSystemWordContainer : WordListContainer
     {
-
         string _targetFileLocation = null;
+
+        static object _fileReadLockObject = new object();
 
         /// <summary>
         /// The location of the text file that will be read. Each word must start on its own line for the word to show up seperately 
@@ -41,9 +42,12 @@ namespace Bickers.Twaddle.Containers.Lorem
             }
 
             var actualPath = Path.Combine(_targetFileLocation);
-            var lines = File.ReadAllLines(actualPath);
+            lock (_fileReadLockObject)
+            {
+                var lines = File.ReadAllLines(actualPath);
+                return lines.ToList();
+            }
 
-            return lines.ToList();
         }
     }
 

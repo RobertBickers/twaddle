@@ -1,13 +1,13 @@
 ﻿using Bickers.Twaddle.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System;
 
 namespace Tests.UnitTesting.WordMaker
 {
-    [TestClass]
+    [TestFixture]
     public class DateTests
     {
-        [TestMethod()]
+        [Test()]
         public void MakeDate_WthNullArgs_DateGeneratedBetweenCSharpMinAndMax()
         {
             //Act
@@ -19,7 +19,7 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(generatedDate < DateTime.MaxValue);
         }
 
-        [TestMethod()]
+        [Test()]
         public void MakeDate_WithMinStartDate_DateCreatedGreaterThanProvidedMinValue()
         {
             //Arrange
@@ -33,7 +33,7 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(generatedDate < DateTime.MaxValue);
         }
 
-        [TestMethod()]
+        [Test()]
         public void MakeDate_WithMinStartDateAndMaxEndDate_DateCreatedBetweenTwoArguments()
         {
             //Arrange

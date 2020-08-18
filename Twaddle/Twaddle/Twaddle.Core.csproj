@@ -23,7 +23,6 @@
     <PackageIconUrl>https://raw.githubusercontent.com/RobertBickers/Twaddle/master/settings.png</PackageIconUrl>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Copyright>Copyright ©2018 Robert Bickers</Copyright>
-    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>twaddle-sign.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 

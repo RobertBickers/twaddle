@@ -20,9 +20,5 @@ namespace Bickers.Twaddle.Contracts
         /// <param name="prepend">(Optional) The word that the sentence will end with</param>
         /// <returns></returns>
         string GenerateSentence(int numberOfWords, string append = "", string prepend = "");
-
-
-
-
     }
 }
