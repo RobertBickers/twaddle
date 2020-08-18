@@ -13,6 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Twaddle.Library\Twaddle.Library.csproj" />
+    <ProjectReference Include="..\Twaddle.Library\Twaddle.Core.csproj" />
   </ItemGroup>
 </Project>

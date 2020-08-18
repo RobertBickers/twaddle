@@ -9,3 +9,4 @@
 /Twaddle/Twaddle/obj
 /Twaddle/Twaddle.Tests/bin
 /Twaddle/Twaddle.Tests/obj
+*.cache
