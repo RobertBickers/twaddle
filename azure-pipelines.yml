@@ -12,26 +12,29 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-
 steps:
 - task: UseDotNet@2
-  inputs:
+  displayName: 'Install Version 3.0.x'
+  inputs: 
     version: '3.0.x'
     packageType: runtime
 
 - task: DotNetCoreCLI@2
+  displayName: '.NET Core Restore'
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
+  displayName: '.NET Core Build'
   inputs:
     command: 'build'
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: '.NET Core Test'
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
