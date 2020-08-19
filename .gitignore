@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -9,4 +9,7 @@
 /Twaddle/Twaddle/obj
 /Twaddle/Twaddle.Tests/bin
 /Twaddle/Twaddle.Tests/obj
+/bin
+/obj
 .DS_Store
+Twaddle/Twaddle.Core.Tests/obj/Debug/netcoreapp3.1/Twaddle.Core.Tests.csprojAssemblyReference.cache
