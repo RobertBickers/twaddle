@@ -9,3 +9,9 @@
 /Twaddle/Twaddle/obj
 /Twaddle/Twaddle.Tests/bin
 /Twaddle/Twaddle.Tests/obj
+Twaddle/.DS_Store
+.DS_Store
+bin
+obj
+packages
+
