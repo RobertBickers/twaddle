@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Authors>Robert Bickers</Authors>
     <Company>Code Treehouse</Company>
     <Product>Twaddle</Product>
@@ -23,7 +22,6 @@
     <PackageIconUrl>https://raw.githubusercontent.com/RobertBickers/Twaddle/master/settings.png</PackageIconUrl>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Copyright>Copyright ©2018 Robert Bickers</Copyright>
-    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>twaddle-sign.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
