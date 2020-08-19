@@ -1,44 +1,38 @@
 ﻿using Bickers.Twaddle.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Drawing;
+using NUnit.Framework;
 
-namespace Tests.UnitTesting.WordMaker
+namespace Tests.UnitTesting.Color
 {
-    [TestClass]
+    [TestFixture]
     public class ColourTest
     {
-        [TestMethod()]
+        [Test()]
         public void GenerateColour_WithoutArgs_7CharacterStringReturned()
         {
             int expectedNumberOfCharacters = 7;
-            int actualNumberOfCharacters = -1;
-
-            //Act
             string colourString = Twaddle.Colour.GenerateColourString();
 
-            actualNumberOfCharacters = colourString.Length;
+            int actualNumberOfCharacters = colourString.Length;
 
-            //Assert
-            Assert.IsTrue(colourString.Length == expectedNumberOfCharacters, "Colour string does not have the expected number of characters");
+            Assert.AreEqual(expectedNumberOfCharacters, actualNumberOfCharacters, "Colour string does not have the expected number of characters");
         }
 
-        [TestMethod()]
+        [Test()]
         public void GenerateColour_WithoutArgs_StringStartsWithHash()
         {
             string expectedStartingCharacter = "#";
 
             string colourString = Twaddle.Colour.GenerateColourString();
 
-            //Assert
             Assert.IsTrue(colourString.StartsWith(expectedStartingCharacter), "Colour string does not start with a hash (#) character");
         }
 
-        [TestMethod()]
+        [Test()]
         public void Generatecolour_WithoutArgs_ColourCanBeParsedBySystemDrawingColour()
         {
             string colourString = Twaddle.Colour.GenerateColourString();
 
-            Color convertedColour = System.Drawing.ColorTranslator.FromHtml(colourString);
+            System.Drawing.Color convertedColour = System.Drawing.ColorTranslator.FromHtml(colourString);
 
             Assert.IsFalse(convertedColour.IsEmpty, "Colour string has not been generated");
             Assert.IsTrue(convertedColour.R > 0, "Red channel doesn't have any value");
@@ -46,10 +40,10 @@ namespace Tests.UnitTesting.WordMaker
             Assert.IsTrue(convertedColour.B > 0, "Blue channel doesn't have any value");
         }
 
-        [TestMethod()]
+        [Test()]
         public void GenerateColour_WithoutArgs_ColorReturned()
         {
-            Color color = Twaddle.Colour.GenerateColour();
+            System.Drawing.Color color = Twaddle.Colour.GenerateColour();
 
             Assert.IsFalse(color.IsEmpty, "Colour string has not been initialised");
             Assert.IsTrue(color.R != 0);
