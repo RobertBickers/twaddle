@@ -6,6 +6,8 @@ Available from nuget here: [https://www.nuget.org/packages/Twaddle/](https://www
 
 To get started, download the NuGet package or download and include the classes manually
 
+[![Build Status](https://robertbickers.visualstudio.com/Twaddle/_apis/build/status/Twaddle%20Test%20Runner?branchName=master)](https://robertbickers.visualstudio.com/Twaddle/_build/latest?definitionId=8&branchName=master)
+
 -----
 
 The namespace for the core Twaddle class is available through ``using Bickers.Twaddle.Core;``
