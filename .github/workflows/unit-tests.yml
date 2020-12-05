@@ -11,5 +11,5 @@ jobs:
       - uses: actions/checkout@v1
       - name: Run Unit Tests
         run: |
-          cd Twaddle/Twaddle.Core.Tests
-          dotnet test
+          cd Twaddle/Twaddle.Library.Tests
+          dotnet test --list-tests --configuration Release
