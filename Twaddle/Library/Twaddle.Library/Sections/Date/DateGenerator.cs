@@ -1,7 +1,6 @@
-﻿using Bickers.Twaddle.Contracts;
-using System;
+﻿using System;
 
-namespace Bickers.Twaddle.Date
+namespace Bickers.Twaddle.Generators
 {
     internal class DateGenerator : IDateGenerator
     {

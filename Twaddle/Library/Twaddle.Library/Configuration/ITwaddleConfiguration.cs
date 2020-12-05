@@ -1,44 +1,19 @@
-﻿using Bickers.Twaddle.Contracts;
-using System.Collections.Generic;
-using System.Text;
+﻿using Bickers.Twaddle.Generators;
 
 namespace Bickers.Twaddle.Configuration
 {
-
-    /// <summary>
-    /// Configuration contract for the Twaddle generation implementations
-    /// </summary>
     public interface ITwaddleConfiguration
     {
-        /// <summary>
-        /// Handles the generation of credentials
-        /// </summary>
-        ICredentialGenerator Credential { get; }
+        ICredentialGenerator CredentialConfig { get; }
 
-        /// <summary>
-        /// Handles the generation of dates
-        /// </summary>
-        IDateGenerator Date { get; }
+        IDateGenerator DateConfig { get; }
 
-        /// <summary>
-        /// Handles the generation of phone numbers
-        /// </summary>
-        IPhoneGenerator Phone { get; }
+        IPhoneGenerator PhoneConfig { get; }
 
-        /// <summary>
-        /// Handles the generation of phone numbers
-        /// </summary>
-        IColourGenerator Colour { get; }
+        IColourGenerator ColourConfig { get; }
 
-        /// <summary>
-        /// Handles the generation of words and sentences
-        /// </summary>
-        IWordGenerator Word { get; }
+        IWordGenerator WordConfig { get; }
 
-
-        /// <summary>
-        /// Handles the generation of names
-        /// </summary>
-        INameGenerator Name { get; }
+        INameGenerator NameGenerator { get; }
     }
 }

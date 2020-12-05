@@ -1,11 +1,5 @@
-﻿using Bickers.Twaddle.Colour;
-using Bickers.Twaddle.Contracts;
-using Bickers.Twaddle.Credentials;
-using Bickers.Twaddle.Date;
-using Bickers.Twaddle.Names;
-using Bickers.Twaddle.Phone;
-using Bickers.Twaddle.Word;
-using System;
+﻿using System;
+using Bickers.Twaddle.Generators;
 
 namespace Bickers.Twaddle.Configuration
 {
@@ -14,19 +8,30 @@ namespace Bickers.Twaddle.Configuration
     /// </summary>
     public class TwaddleConfiguration : ITwaddleConfiguration
     {
-        private static readonly Lazy<CredentialGenerator> credentialLazyValue = new Lazy<CredentialGenerator>(() => new CredentialGenerator());
-        private static readonly Lazy<DateGenerator> dateLazyValue = new Lazy<DateGenerator>(() => new DateGenerator());
-        private static readonly Lazy<PhoneGenerator> phoneLazyValue = new Lazy<PhoneGenerator>(() => new PhoneGenerator());
-        private static readonly Lazy<ColourGenerator> colourLazyValue = new Lazy<ColourGenerator>(() => new ColourGenerator());
-        private static readonly Lazy<WordGenerator> wordLazyValue = new Lazy<WordGenerator>(() => new WordGenerator());
-        private static readonly Lazy<NameGenerator> nameLazyValue = new Lazy<NameGenerator>(() => new NameGenerator());
+        private static readonly Lazy<ICredentialGenerator> credentialLazyValue = new Lazy<ICredentialGenerator>(() 
+            => new CredentialGenerator());
+        private static readonly Lazy<IDateGenerator> dateLazyValue = new Lazy<IDateGenerator>(() 
+            => new DateGenerator());
+        private static readonly Lazy<IPhoneGenerator> phoneLazyValue = new Lazy<IPhoneGenerator>(() 
+            => new PhoneGenerator());
+        private static readonly Lazy<IColourGenerator> colourLazyValue = new Lazy<IColourGenerator>(() 
+            => new ColourGenerator());
+        private static readonly Lazy<IWordGenerator> wordLazyValue = new Lazy<IWordGenerator>(() 
+            => new WordGenerator());
+        private static readonly Lazy<INameGenerator> nameLazyValue = new Lazy<INameGenerator>(() 
+            => new NameGenerator());
 
-        public virtual ICredentialGenerator Credential => credentialLazyValue.Value;
-        public virtual IDateGenerator Date => dateLazyValue.Value;
-        public virtual IPhoneGenerator Phone => phoneLazyValue.Value;
-        public virtual IColourGenerator Colour => colourLazyValue.Value;
-        public virtual IWordGenerator Word => wordLazyValue.Value;
-
-        public INameGenerator Name => nameLazyValue.Value;
+        public virtual ICredentialGenerator CredentialConfig 
+            => credentialLazyValue.Value;
+        public virtual IDateGenerator DateConfig 
+            => dateLazyValue.Value;
+        public virtual IPhoneGenerator PhoneConfig 
+            => phoneLazyValue.Value;
+        public virtual IColourGenerator ColourConfig 
+            => colourLazyValue.Value;
+        public virtual IWordGenerator WordConfig 
+            => wordLazyValue.Value;
+        public virtual INameGenerator NameGenerator 
+            => nameLazyValue.Value;
     }
 }

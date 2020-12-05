@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bickers.Twaddle.Contracts
+namespace Bickers.Twaddle.Generators
 {
     public interface IDateGenerator
     {
