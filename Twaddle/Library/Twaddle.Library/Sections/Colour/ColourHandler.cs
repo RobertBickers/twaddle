@@ -4,9 +4,9 @@ using System.Globalization;
 
 namespace Bickers.Twaddle.Sections.Colour
 {
-    internal class ColourHandler
+    internal static class ColourHandlerExtensions
     {
-        internal static Color FromHex(string hex)
+        internal static Color FromHex(this string hex)
         {
             FromHex(hex, out var a, out var r, out var g, out var b);
 

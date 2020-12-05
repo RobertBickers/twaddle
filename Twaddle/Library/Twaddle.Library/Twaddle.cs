@@ -1,52 +1,29 @@
-﻿using Bickers.Twaddle.Colour;
-using Bickers.Twaddle.Configuration;
-using Bickers.Twaddle.Contracts;
+﻿using Bickers.Twaddle.Configuration;
+using Bickers.Twaddle.Generators;
 
 namespace Bickers.Twaddle.Core
 {
     public static class Twaddle
     {
-
         static Twaddle()
-        {
-            _twaddleConfiguration = new TwaddleConfiguration();
-        }
+            => (_configuration) = (new TwaddleConfiguration());
 
+        private static ITwaddleConfiguration _configuration;
 
-        private static ITwaddleConfiguration _twaddleConfiguration = null;
         public static void OverrideConfiguration(ITwaddleConfiguration configuration)
-        {
-            _twaddleConfiguration = configuration;
-        }
+            => (_configuration) = (configuration);
 
+        public static ICredentialGenerator Profile => _configuration.CredentialConfig;
 
-        /// <summary>
-        /// Handles generation of email addresses and passwords 
-        /// </summary>
-        public static ICredentialGenerator Profile => _twaddleConfiguration.Credential;
+        public static IDateGenerator Date => _configuration.DateConfig;
 
-        /// <summary>
-        /// Handles generation of dates
-        /// </summary>
-        public static IDateGenerator Date => _twaddleConfiguration.Date;
+        public static IPhoneGenerator Phone => _configuration.PhoneConfig;
 
-        /// <summary>
-        /// Handles generation of phone numbers
-        /// </summary>
-        public static IPhoneGenerator Phone => _twaddleConfiguration.Phone;
+        public static IColourGenerator Colour => _configuration.ColourConfig;
 
+        public static IWordGenerator Word => _configuration.WordConfig;
 
-        /// <summary>
-        /// Handles generation of colours
-        /// </summary>
-        public static IColourGenerator Colour => _twaddleConfiguration.Colour;
-
-        /// <summary>
-        /// Handles generation of words and sentences
-        /// </summary>
-        public static IWordGenerator Word => _twaddleConfiguration.Word;
-
-        public static INameGenerator Name => _twaddleConfiguration.Name;
+        public static INameGenerator Name => _configuration.NameGenerator;
 
     }
 }

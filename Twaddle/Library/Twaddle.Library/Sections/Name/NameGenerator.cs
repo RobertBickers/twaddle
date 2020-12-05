@@ -1,15 +1,12 @@
 ﻿using Bickers.Twaddle.Containers;
 using Bickers.Twaddle.Containers.Lorem;
-using Bickers.Twaddle.Contracts;
 using System;
 
-namespace Bickers.Twaddle.Names
+namespace Bickers.Twaddle.Generators
 {
     public class NameGenerator : INameGenerator
     {
-
         private static Random _wmRandomSeed = new Random();
-
 
         WordListContainer _firstNameWordListContainer = null;
         WordListContainer _lastNameContainer = null;

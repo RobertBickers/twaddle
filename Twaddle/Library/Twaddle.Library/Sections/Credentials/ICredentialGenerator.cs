@@ -1,4 +1,4 @@
-﻿namespace Bickers.Twaddle.Contracts
+﻿namespace Bickers.Twaddle.Generators
 {
     public interface ICredentialGenerator
     {

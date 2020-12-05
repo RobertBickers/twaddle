@@ -1,8 +1,6 @@
 ﻿using Bickers.Twaddle.Containers;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Bickers.Twaddle.Contracts
+namespace Bickers.Twaddle.Generators
 {
     public interface INameGenerator
     {
