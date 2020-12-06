@@ -1,44 +1,53 @@
-﻿using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Generators;
+using FluentAssertions;
 using NUnit.Framework;
+using System.Data;
 using System.Linq;
 
 namespace Tests.UnitTesting.Name
 {
-    [TestFixture]
-    public class NameTests
-    {
-        [Test()]
-        public void GenerateFirstName_NoArgs_StringReturned()
-        {
-            string firstName = Twaddle.Name.GenerateFirstName();
+	[TestFixture]
+	public class NameTests
+	{
+		INameGenerator _systemUnderTest;
 
-            Assert.IsTrue(firstName.Length > 0, "Returned first name does not contain any characters.");
-        }
+		public NameTests()
+		{
+			_systemUnderTest = new NameGenerator();
+		}
 
-        [Test()]
-        public void GenerateSecondName_NoArgs_StringReturned()
-        {
-            string secondName = Twaddle.Name.GenerateSecondName();
+		[Test()]
+		public void GenerateFirstName_NoArgs_StringReturned()
+		{
+			string firstName = _systemUnderTest.GenerateFirstName();
 
-            Assert.IsTrue(secondName.Length > 0, "Returned second name does not contain any characters.");
-        }
+			firstName.Should().NotBeNullOrEmpty();
+		}
 
-        [Test()]
-        public void GenerateFullName_NoArgs_StringReturned()
-        {
-            string fullName = Twaddle.Name.GenerateFullName();
+		[Test()]
+		public void GenerateSecondName_NoArgs_StringReturned()
+		{
+			string secondName = _systemUnderTest.GenerateSecondName();
 
-            Assert.IsTrue(fullName.Length > 0, "Returned full name does not contain any characters.");
-        }
+			secondName.Should().NotBeNullOrEmpty();
+		}
 
-        [Test()]
-        public void GenerateFullName_NoArgs_TwoWordsSeperatedBySpaceAreProvided()
-        {
-            string fullName = Twaddle.Name.GenerateFullName();
+		[Test()]
+		public void GenerateFullName_NoArgs_StringReturned()
+		{
+			string fullName = _systemUnderTest.GenerateFullName();
 
-            string[] seperateWords = fullName.Split(' ');
+			fullName.Should().NotBeNullOrEmpty();
+		}
 
-            Assert.IsTrue(seperateWords.Count() == 2, "Two seperate words have not been returned");
-        }
-    }
+		[Test()]
+		public void GenerateFullName_NoArgs_TwoWordsSeperatedBySpaceAreProvided()
+		{
+			string fullName = _systemUnderTest.GenerateFullName();
+
+			string[] seperateWords = fullName.Split(' ');
+
+			seperateWords.Should().HaveCount(2);
+		}
+	}
 }

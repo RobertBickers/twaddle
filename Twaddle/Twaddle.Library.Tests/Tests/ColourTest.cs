@@ -1,54 +1,60 @@
-﻿using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Generators;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace Tests.UnitTesting.Color
 {
-    [TestFixture]
-    public class ColourTest
-    {
-        [Test()]
-        public void GenerateColour_WithoutArgs_7CharacterStringReturned()
-        {
-            int expectedNumberOfCharacters = 7;
-            string colourString = Twaddle.Colour.GenerateColourString();
+	[TestFixture]
+	public class ColourTest
+	{
+		readonly IColourGenerator _systemUnderTest;
 
-            int actualNumberOfCharacters = colourString.Length;
+		public ColourTest()
+		{
+			_systemUnderTest = new ColourGenerator();
+		}
 
-            Assert.AreEqual(expectedNumberOfCharacters, actualNumberOfCharacters, "Colour string does not have the expected number of characters");
-        }
+		[Test()]
+		public void GenerateColour_WithoutArgs_7CharacterStringReturned()
+		{
+			int expectedNumberOfCharacters = 7;
+			string colourString = _systemUnderTest.GenerateColourString();
 
-        [Test()]
-        public void GenerateColour_WithoutArgs_StringStartsWithHash()
-        {
-            string expectedStartingCharacter = "#";
+			int actualNumberOfCharacters = colourString.Length;
 
-            string colourString = Twaddle.Colour.GenerateColourString();
+			actualNumberOfCharacters.Should().Be(expectedNumberOfCharacters);
+		}
 
-            Assert.IsTrue(colourString.StartsWith(expectedStartingCharacter), "Colour string does not start with a hash (#) character");
-        }
+		[Test()]
+		public void GenerateColour_WithoutArgs_StringStartsWithHash()
+		{
+			string colourString = _systemUnderTest.GenerateColourString();
 
-        [Test()]
-        public void Generatecolour_WithoutArgs_ColourCanBeParsedBySystemDrawingColour()
-        {
-            string colourString = Twaddle.Colour.GenerateColourString();
+			colourString.Should().StartWith("#");
+		}
 
-            System.Drawing.Color convertedColour = System.Drawing.ColorTranslator.FromHtml(colourString);
+		[Test()]
+		public void Generatecolour_WithoutArgs_ColourCanBeParsedBySystemDrawingColour()
+		{
+			string colourString = _systemUnderTest.GenerateColourString();
 
-            Assert.IsFalse(convertedColour.IsEmpty, "Colour string has not been generated");
-            Assert.IsTrue(convertedColour.R > 0, "Red channel doesn't have any value");
-            Assert.IsTrue(convertedColour.G > 0, "Green channel doesn't have any value");
-            Assert.IsTrue(convertedColour.B > 0, "Blue channel doesn't have any value");
-        }
+			System.Drawing.Color convertedColour = System.Drawing.ColorTranslator.FromHtml(colourString);
 
-        [Test()]
-        public void GenerateColour_WithoutArgs_ColorReturned()
-        {
-            System.Drawing.Color color = Twaddle.Colour.GenerateColour();
+			convertedColour.IsEmpty.Should().BeFalse();
+			convertedColour.R.Should().NotBe(0);
+			convertedColour.G.Should().NotBe(0);
+			convertedColour.B.Should().NotBe(0);
+		}
 
-            Assert.IsFalse(color.IsEmpty, "Colour string has not been initialised");
-            Assert.IsTrue(color.R != 0);
-            Assert.IsTrue(color.G != 0);
-            Assert.IsTrue(color.B != 0);
-        }
-    }
+		[Test()]
+		public void GenerateColour_WithoutArgs_ColorReturned()
+		{
+			System.Drawing.Color color = _systemUnderTest.GenerateColour();
+
+			color.IsEmpty.Should().BeFalse();
+			color.R.Should().NotBe(0);
+			color.G.Should().NotBe(0);
+			color.B.Should().NotBe(0);
+		}
+	}
 }
