@@ -1,28 +1,36 @@
-﻿using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Generators;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace Tests.UnitTesting.Phone
 {
-    [TestFixture]
-    public class PhoneTests
-    {
-        [Test()]
-        public void MakePhoneNumber_WithoutPrepend_PhoneNumberGenerated()
-        {
-            string phoneNumber = Twaddle.Phone.GeneratePhoneNumber();
+	[TestFixture]
+	public class PhoneTests
+	{
+		readonly IPhoneGenerator _systemUnderTest;
 
-            Assert.IsTrue(phoneNumber.Length == 11, "Phone number has invalid number of characters");
-        }
+		const string _phoneNumberPrepend = "+44";
 
-        [Test()]
-        public void MakePhoneNumber_WithPrepend_PhoneNumberGeneratedWithPrepend()
-        {
-            string prepend = "+447";
+		public PhoneTests()
+		{
+			_systemUnderTest = new PhoneGenerator();
+		}
 
-            string phoneNumber = Twaddle.Phone.GeneratePhoneNumber(prepend);
+		[Test()]
+		public void MakePhoneNumber_WithoutPrepend_PhoneNumberGenerated()
+		{
+			string phoneNumber = _systemUnderTest.GeneratePhoneNumber();
 
-            Assert.IsTrue(phoneNumber.Length == 11, "Phone number has incorrect number of characters");
-            Assert.IsTrue(phoneNumber.StartsWith(prepend));
-        }
-    }
+			phoneNumber.Should().HaveLength(11);
+		}
+
+		[Test()]
+		public void MakePhoneNumber_WithPrepend_PhoneNumberGeneratedWithPrepend()
+		{
+			string phoneNumber = _systemUnderTest.GeneratePhoneNumber(_phoneNumberPrepend);
+
+			phoneNumber.Should().HaveLength(11);
+			phoneNumber.Should().StartWith(_phoneNumberPrepend);
+		}
+	}
 }

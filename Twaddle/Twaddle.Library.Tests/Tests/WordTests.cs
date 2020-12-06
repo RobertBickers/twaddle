@@ -1,61 +1,67 @@
-﻿using System;
-using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Generators;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace Tests.UnitTesting.Word
 {
-    [TestFixture]
-    public class WordTests
-    {
-        [Test()]
-        public void MakeSentence_With10Words_SentenceWith10WordMade()
-        {
-            string sentence = Twaddle.Word.GenerateSentence(10);
+	[TestFixture]
+	public class WordTests
+	{
+		readonly IWordGenerator _systemUnderTest;
 
-            string[] sentenceWords = sentence.Split(' ');
+		public WordTests()
+		{
+			_systemUnderTest = new WordGenerator();
+		}
 
-            Assert.IsTrue(sentence.Length > 0, "Returned sentence does not contain any characters.");
-            Assert.AreEqual(sentenceWords.Length, 10, "Number of words is incorrect");
-        }
+		[Test()]
+		public void MakeSentence_With10Words_SentenceWith10WordMade()
+		{
+			string sentence = _systemUnderTest.GenerateSentence(10);
 
-        [Test()]
-        public void MakeWord_WithNoArgs_1WordGenerated()
-        {
-            string word = Twaddle.Word.GenerateWord();
+			string[] sentenceWords = sentence.Split(' ');
 
-            Assert.IsNotNull(word);
-            Assert.IsTrue(!String.IsNullOrEmpty(word));
-        }
+			sentence.Should().NotBeNullOrWhiteSpace();
+			sentenceWords.Should().HaveCount(10);
+		}
 
-        [Test()]
-        public void MakeSentence_WithEndingString_SentenceFinishedWithSentence()
-        {
-            string endingWith = "and they all lived happily ever after";
+		[Test()]
+		public void MakeWord_WithNoArgs_1WordGenerated()
+		{
+			string word = _systemUnderTest.GenerateWord();
 
-            string generatedWord = Twaddle.Word.GenerateSentence(400, null, endingWith);
+			word.Should().NotBeNullOrWhiteSpace();
+		}
 
-            Assert.IsTrue(generatedWord.EndsWith(endingWith), "Sentence does not end with the provided value");
-        }
+		[Test()]
+		public void MakeSentence_WithEndingString_SentenceFinishedWithSentence()
+		{
+			string endingString = "and they all lived happily ever after";
 
-        [Test()]
-        public void MakeSentence_WithStartingString_SentenceStartsWithSentence()
-        {
-            string startsWith = "Once upon a time";
+			string sentence = _systemUnderTest.GenerateSentence(400, null, endingString);
 
-            string generatedWord = Twaddle.Word.GenerateSentence(400, startsWith);
+			sentence.Should().EndWith(endingString);
+		}
 
-            Assert.IsTrue(generatedWord.StartsWith(startsWith), "Sentence does not start` with the provided value");
-        }
+		[Test()]
+		public void MakeSentence_WithStartingString_SentenceStartsWithSentence()
+		{
+			string startingWords = "Once upon a time";
 
-        [TestCase("first", "second", 1)]
-        [TestCase("first", "second", 2)]
-        [TestCase("first", "second", 3)]
-        public void MakeSentence_WordLengthLessThanProvidedAfterSentencePrependAndAppend_NumberOfWordsStillGenerated(string firstWord, string secondWord, int numberOfWords)
-        {
-            string generatedSentence = Twaddle.Word.GenerateSentence(numberOfWords, firstWord, secondWord);
+			string sentence = _systemUnderTest.GenerateSentence(400, startingWords);
 
-            int actualNumberOfWords = generatedSentence.Split(' ').Length;
-            Assert.IsTrue(actualNumberOfWords == numberOfWords, $"Actual number of words returned: {actualNumberOfWords}. Expected: {numberOfWords}");
-        }
-    }
+			sentence.Should().StartWith(startingWords);
+		}
+
+		[TestCase("first", "second", 1)]
+		[TestCase("first", "second", 2)]
+		[TestCase("first", "second", 3)]
+		public void MakeSentence_WordLengthLessThanProvidedAfterSentencePrependAndAppend_NumberOfWordsStillGenerated(string firstWord, string secondWord, int expectedNumberOfWords)
+		{
+			string generatedSentence = _systemUnderTest.GenerateSentence(expectedNumberOfWords, firstWord, secondWord);
+
+			var actualNumberOfWords = generatedSentence.Split(' ');
+			actualNumberOfWords.Should().HaveCount(expectedNumberOfWords);
+		}
+	}
 }

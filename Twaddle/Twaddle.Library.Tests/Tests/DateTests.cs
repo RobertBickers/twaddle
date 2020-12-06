@@ -1,43 +1,49 @@
-﻿using Bickers.Twaddle.Core;
+﻿using Bickers.Twaddle.Generators;
 using NUnit.Framework;
 using System;
 
 namespace Tests.UnitTesting.Date
 {
-    [TestFixture]
-    public class DateTests
-    {
-        [Test()]
-        public void MakeDate_WthNullArgs_DateGeneratedBetweenCSharpMinAndMax()
-        {
-            DateTime generatedDate = Twaddle.Date.GenerateDate(null, null);
+	[TestFixture]
+	public class DateTests
+	{
+		readonly IDateGenerator _systemUnderTest;
 
-            Assert.IsTrue(generatedDate != null);
-            Assert.IsTrue(generatedDate > DateTime.MinValue);
-            Assert.IsTrue(generatedDate < DateTime.MaxValue);
-        }
+		public DateTests()
+		{
+			_systemUnderTest = new DateGenerator();
+		}
 
-        [Test()]
-        public void MakeDate_WithMinStartDate_DateCreatedGreaterThanProvidedMinValue()
-        {
-            DateTime startDate = DateTime.Now;
+		[Test()]
+		public void MakeDate_WthNullArgs_DateGeneratedBetweenCSharpMinAndMax()
+		{
+			DateTime generatedDate = _systemUnderTest.GenerateDate(null, null);
 
-            DateTime generatedDate = Twaddle.Date.GenerateDate(startDate, null);
+			Assert.IsTrue(generatedDate > DateTime.MinValue);
+			Assert.IsTrue(generatedDate < DateTime.MaxValue);
+		}
 
-            Assert.IsTrue(generatedDate > startDate);
-            Assert.IsTrue(generatedDate < DateTime.MaxValue);
-        }
+		[Test()]
+		public void MakeDate_WithMinStartDate_DateCreatedGreaterThanProvidedMinValue()
+		{
+			DateTime startDate = DateTime.Now;
 
-        [Test()]
-        public void MakeDate_WithMinStartDateAndMaxEndDate_DateCreatedBetweenTwoArguments()
-        {
-            DateTime startDate = DateTime.Now;
-            DateTime endDate = DateTime.Now.AddDays(10);
+			DateTime generatedDate = _systemUnderTest.GenerateDate(startDate, null);
 
-            DateTime generatedDate = Twaddle.Date.GenerateDate(startDate, endDate);
+			Assert.IsTrue(generatedDate > startDate);
+			Assert.IsTrue(generatedDate < DateTime.MaxValue);
+		}
 
-            Assert.IsTrue(generatedDate > startDate);
-            Assert.IsTrue(generatedDate < endDate);
-        }
-    }
+		[Test()]
+		public void MakeDate_WithMinStartDateAndMaxEndDate_DateCreatedBetweenTwoArguments()
+		{
+			DateTime startDate = DateTime.Now;
+			DateTime endDate = DateTime.Now.AddDays(10);
+
+			DateTime generatedDate = _systemUnderTest.GenerateDate(startDate, endDate);
+
+			Assert.IsTrue(generatedDate > startDate);
+			Assert.IsTrue(generatedDate < endDate);
+		}
+	}
 }

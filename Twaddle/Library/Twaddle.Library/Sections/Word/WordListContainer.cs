@@ -32,8 +32,4 @@ namespace Bickers.Twaddle.Containers
             }
         }
     }
-
-
-
-
 }

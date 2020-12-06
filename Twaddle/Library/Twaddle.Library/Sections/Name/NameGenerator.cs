@@ -6,7 +6,7 @@ namespace Bickers.Twaddle.Generators
 {
     public class NameGenerator : INameGenerator
     {
-        private static Random _wmRandomSeed = new Random();
+        private static Random _randomSeed = new Random();
 
         WordListContainer _firstNameWordListContainer = null;
         WordListContainer _lastNameContainer = null;
@@ -24,7 +24,7 @@ namespace Bickers.Twaddle.Generators
 
         public virtual string GenerateFirstName()
         {
-            return _firstNameWordListContainer.WordList[_wmRandomSeed.Next(_firstNameWordListContainer.Words.Value)];
+            return _firstNameWordListContainer.WordList[_randomSeed.Next(_firstNameWordListContainer.Words.Value)];
         }
 
         public virtual string GenerateFullName()
@@ -34,7 +34,7 @@ namespace Bickers.Twaddle.Generators
 
         public virtual string GenerateSecondName()
         {
-            return _lastNameContainer.WordList[_wmRandomSeed.Next(_lastNameContainer.Words.Value)];
+            return _lastNameContainer.WordList[_randomSeed.Next(_lastNameContainer.Words.Value)];
         }
 
         public void Setup(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
