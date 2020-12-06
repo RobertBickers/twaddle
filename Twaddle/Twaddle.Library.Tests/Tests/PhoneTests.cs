@@ -1,5 +1,4 @@
-﻿using Bickers.Twaddle.Core;
-using Bickers.Twaddle.Generators;
+﻿using Bickers.Twaddle.Generators;
 using FluentAssertions;
 using NUnit.Framework;
 

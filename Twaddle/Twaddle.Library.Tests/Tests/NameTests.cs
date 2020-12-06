@@ -1,8 +1,6 @@
 ﻿using Bickers.Twaddle.Generators;
 using FluentAssertions;
 using NUnit.Framework;
-using System.Data;
-using System.Linq;
 
 namespace Tests.UnitTesting.Name
 {
