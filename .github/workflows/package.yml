@@ -25,7 +25,7 @@ jobs:
       - name: Package NuGet
         run: |
             cd Twaddle/Library/Twaddle.Library
-            echo ${{ github.event.inputs.version }}
+            echo "${{ github.event.inputs.version }}"
             dotnet pack --configuration Release --include-symbols -p:PackageVersion="${{ github.event.inputs.version }}"
              
             
