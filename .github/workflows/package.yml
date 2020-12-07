@@ -8,6 +8,7 @@ on:
         description: 'The version that will be used within this NuGet package'
         required: true
         default: '2.0.0'
+ push: 
 jobs:              
   tests:
     runs-on: ubuntu-latest
