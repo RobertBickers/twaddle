@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.1
         with:
          name: 'NuGet Package'
-         path: '/Twaddle/Library/Twaddle.Library/bin/**/*.nukpg'
+         path: '**/Twaddle.Library/**/*.nupkg'
          
         
 
