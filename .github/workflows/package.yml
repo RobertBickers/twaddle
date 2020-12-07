@@ -18,7 +18,7 @@ jobs:
             dotnet test --configuration Release
       - name: Package NuGet
         run: |
-            cd ../Library/Twaddle.Library
+            cd Twaddle/Library/Twaddle.Library
             dotnet pack --configuration Release --include-symbols
              
             
