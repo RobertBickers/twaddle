@@ -1,8 +1,7 @@
 
 name: Package
 
-on: [pull_request]
-  
+on: [pull_request]  
 
 jobs:              
   tests:
@@ -19,8 +18,7 @@ jobs:
             dotnet test --configuration Release
       - name: Package NuGet
         run: |
-            cd ..
-            cd Twaddle.Libray
+            cd ../Library/Twaddle.Library
             dotnet pack --configuration Release --include-symbols
              
             
