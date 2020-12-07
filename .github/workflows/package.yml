@@ -19,14 +19,25 @@ jobs:
           dotnet-version: '5.0.100-preview.3.20216.6' # SDK Version to use.
       - name: Run Unit Tests
         run: |
-            cd Twaddle/Twaddle.Library.Tests
-            dotnet test --list-tests --configuration Release
-            dotnet test --configuration Release
+         cd Twaddle/Twaddle.Library.Tests
+         dotnet test --list-tests --configuration Release
+         dotnet test --configuration Release
       - name: Package NuGet
         run: |
-            cd Twaddle/Library/Twaddle.Library
-            echo "${{ github.event.inputs.version }}"
-            dotnet pack --configuration Release --include-symbols --version-suffix "${{ github.event.inputs.version }}"
+         cd Twaddle/Library/Twaddle.Library
+         echo "${{ github.event.inputs.version }}"
+         dotnet pack --configuration Release --include-symbols --version-suffix "${{ github.event.inputs.version }}"
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.1
+        with:
+         name: 'NuGet Package'
+         path: '/Twaddle/Library/Twaddle.Library/bin/**/*.nukpg'
+         
+        
+
+         
+               
+          
              
             
     
