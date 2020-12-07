@@ -1,0 +1,19 @@
+
+name: Package
+
+on: [pull_request]
+  
+
+jobs:              
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.100-preview.3.20216.6' # SDK Version to use.
+      - name: Run Unit Tests
+        run: |
+            cd Twaddle/Twaddle.Library.Tests
+            dotnet test --list-tests --configuration Release
+            dotnet test --configuration Release
