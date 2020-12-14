@@ -9,7 +9,7 @@ namespace Codetreehouse.Twaddle.Generators
     /// </summary>
     public class ColourGenerator : IColourGenerator
     {
-        private static Random random = new Random();
+        private static readonly Random random = new Random();
 
         /// <summary>
         /// Generates a random colour string in hex format

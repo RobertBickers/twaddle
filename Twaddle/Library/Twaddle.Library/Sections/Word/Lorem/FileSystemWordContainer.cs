@@ -9,7 +9,7 @@ namespace Codetreehouse.Twaddle.Containers.Lorem
     /// </summary>
     public class FileSystemWordContainer : WordListContainer
     {
-        private string _targetFileLocation = null;
+        private readonly string _targetFileLocation;
 
         /// <summary>
         /// The location of the text file that will be read. Each word must start on its own line for the word to show up seperately

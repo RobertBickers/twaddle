@@ -22,7 +22,7 @@ namespace Codetreehouse.Twaddle.Core
             IWordGenerator? wordGenerator,
             INameGenerator? nameGenerator)
             => new Twaddle(
-                new InjectableConfiguration(
+                new TwaddleConfiguration(
                     credentialGenerator,
                     dateGenerator,
                     phoneGenerator,

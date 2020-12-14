@@ -6,34 +6,39 @@ namespace Codetreehouse.Twaddle.Generators
 {
     public class NameGenerator : INameGenerator
     {
-        private static Random _randomSeed = new Random();
+        private static readonly Random _randomSeed = new Random();
 
-        private WordListContainer _firstNameWordListContainer = null;
-        private WordListContainer _lastNameContainer = null;
+        private WordListContainer _firstNameWordListContainer;
+        private WordListContainer _lastNameContainer;
 
         public NameGenerator() : this(null, null)
         {
         }
 
-        public NameGenerator(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
+        public NameGenerator(WordListContainer? firstNameWordListContainer, WordListContainer? lastNameWordContainer)
         {
-            _firstNameWordListContainer = firstNameWordListContainer != null ? firstNameWordListContainer : new FirstNameWordContainer();
-            _lastNameContainer = lastNameWordContainer != null ? lastNameWordContainer : new LastNameWordContainer();
+            _firstNameWordListContainer 
+                = firstNameWordListContainer 
+                ?? new FirstNameWordContainer();
+            
+            _lastNameContainer 
+                = lastNameWordContainer 
+                ?? new LastNameWordContainer();
         }
 
-        public virtual string GenerateFirstName()
+        public virtual string FirstName()
         {
-            return _firstNameWordListContainer.WordList[_randomSeed.Next(_firstNameWordListContainer.Words.Value)];
+            return _firstNameWordListContainer.WordList[_randomSeed.Next(_firstNameWordListContainer.Words)];
         }
 
-        public virtual string GenerateFullName()
+        public virtual string FullName()
         {
-            return GenerateFirstName() + " " + GenerateSecondName();
+            return FirstName() + " " + SecondName();
         }
 
-        public virtual string GenerateSecondName()
+        public virtual string SecondName()
         {
-            return _lastNameContainer.WordList[_randomSeed.Next(_lastNameContainer.Words.Value)];
+            return _lastNameContainer.WordList[_randomSeed.Next(_lastNameContainer.Words)];
         }
 
         public void Setup(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
@@ -48,8 +53,8 @@ namespace Codetreehouse.Twaddle.Generators
                 throw new ArgumentNullException(nameof(lastNameWordContainer));
             }
 
-            _firstNameWordListContainer = firstNameWordListContainer != null ? firstNameWordListContainer : new FirstNameWordContainer();
-            _lastNameContainer = lastNameWordContainer != null ? lastNameWordContainer : new LastNameWordContainer();
+            _firstNameWordListContainer = firstNameWordListContainer ?? new FirstNameWordContainer();
+            _lastNameContainer = lastNameWordContainer ?? new LastNameWordContainer();
         }
     }
 }

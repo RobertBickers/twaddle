@@ -28,7 +28,7 @@ namespace Codetreehouse.Twaddle.Sections.Colour
 
         internal static string ToRgbaHex(string hex)
         {
-            hex = hex.StartsWith("#") ? hex.Substring(1) : hex;
+            hex = hex.StartsWith("#") ? hex[1..] : hex;
 
             if (hex.Length == 8)
                 return hex;
@@ -37,7 +37,7 @@ namespace Codetreehouse.Twaddle.Sections.Colour
                 return hex + "FF";
 
             if (hex.Length < 3 || hex.Length > 4)
-                return null;
+                throw new Exception("Unable to parse hex colour code to RGBA");
 
             //Handle values like #3B2
 

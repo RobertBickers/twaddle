@@ -6,10 +6,10 @@ namespace Codetreehouse.Twaddle.Generators
     {
         void Setup(WordListContainer firstNameContainer, WordListContainer lastNameContainer);
 
-        string GenerateFirstName();
+        string FirstName();
 
-        string GenerateSecondName();
+        string SecondName();
 
-        string GenerateFullName();
+        string FullName();
     }
 }

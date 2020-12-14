@@ -7,9 +7,9 @@ namespace Codetreehouse.Twaddle.Generators
 {
     internal class WordGenerator : IWordGenerator
     {
-        private static Random _wmRandomSeed = new Random();
+        private static readonly Random _wmRandomSeed = new Random();
 
-        private static WordListContainer _container;
+        private WordListContainer _container;
 
         public WordGenerator()
         {
@@ -21,13 +21,16 @@ namespace Codetreehouse.Twaddle.Generators
             _container = wordListContainer;
         }
 
-        public T GenerateRandomEnum<T>() where T : struct, IConvertible
+        public static T GenerateRandomEnum<T>() where T : struct, IConvertible
         {
             Array values = Enum.GetValues(typeof(T));
             Random random = new Random();
-            T randomEnumValue = (T)values.GetValue(random.Next(values.Length));
+            var randomEnumValue = (T?)values.GetValue(random.Next(values.Length));
 
-            return randomEnumValue;
+            if (randomEnumValue == null)
+                throw new Exception("Enum value could not be generated");
+
+            return (T)randomEnumValue;
         }
 
         public string GenerateSentence(int numberOfWords, string prepend = "", string append = "")
@@ -47,14 +50,7 @@ namespace Codetreehouse.Twaddle.Generators
                 else
                 {
                     //Get a value from the string
-                    if (_container.Words != null)
-                    {
-                        sentenceWords.Add(_container.WordList[_wmRandomSeed.Next(_container.Words.Value)]);
-                    }
-                    else
-                    {
-                        throw new Exception("Twaddle word generator has not been configured with a valid word container");
-                    }
+                    sentenceWords.Add(_container.WordList[_wmRandomSeed.Next(_container.Words)]);
                 }
             }
             return string.Join(" ", sentenceWords);

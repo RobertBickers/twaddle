@@ -24,6 +24,21 @@ namespace Tests.UnitTesting.Color
         }
 
         [Test]
+        public void Instance_WithConfiguration_HasDefaultTypes()
+        {
+            Twaddle.WithConfiguration(null, null, null, null, null, null)
+                .Should()
+                .BeOfType(typeof(Twaddle));
+
+            var instance = Twaddle.WithDefaults;
+
+            if (instance is Twaddle twaddle)
+                twaddle.Configuration.Should().BeOfType(typeof(TwaddleConfiguration));
+            else
+                Assert.Fail();
+        }
+
+        [Test]
         public void Instance_WithConfiguration_TypeSetAsExpected()
         {
             var configuration = A.Dummy<ITwaddleConfiguration>();
@@ -34,6 +49,8 @@ namespace Tests.UnitTesting.Color
                 twaddle.Configuration.Should().BeSameAs(configuration);
             else
                 Assert.Fail();
+
+            Twaddle.WithDefaults.Name.FirstName();
         }
 
         [Test]

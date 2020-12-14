@@ -24,12 +24,7 @@ namespace Codetreehouse.Twaddle.Containers
         /// <summary>
         /// Returns the number of words in the setup word list. Returns null if the word list has not been initialised
         /// </summary>
-        public int? Words
-        {
-            get
-            {
-                return WordList?.Count ?? null;
-            }
-        }
+        public int Words
+           => WordList.Count;
     }
 }

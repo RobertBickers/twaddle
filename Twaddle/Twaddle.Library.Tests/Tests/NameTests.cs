@@ -7,7 +7,7 @@ namespace Tests.UnitTesting.Name
     [TestFixture]
     public class NameTests
     {
-        private INameGenerator _systemUnderTest;
+        private readonly INameGenerator _systemUnderTest;
 
         public NameTests()
         {
@@ -17,7 +17,7 @@ namespace Tests.UnitTesting.Name
         [Test()]
         public void GenerateFirstName_NoArgs_StringReturned()
         {
-            string firstName = _systemUnderTest.GenerateFirstName();
+            string firstName = _systemUnderTest.FirstName();
 
             firstName.Should().NotBeNullOrEmpty();
         }
@@ -25,7 +25,7 @@ namespace Tests.UnitTesting.Name
         [Test()]
         public void GenerateSecondName_NoArgs_StringReturned()
         {
-            string secondName = _systemUnderTest.GenerateSecondName();
+            string secondName = _systemUnderTest.SecondName();
 
             secondName.Should().NotBeNullOrEmpty();
         }
@@ -33,7 +33,7 @@ namespace Tests.UnitTesting.Name
         [Test()]
         public void GenerateFullName_NoArgs_StringReturned()
         {
-            string fullName = _systemUnderTest.GenerateFullName();
+            string fullName = _systemUnderTest.FullName();
 
             fullName.Should().NotBeNullOrEmpty();
         }
@@ -41,7 +41,7 @@ namespace Tests.UnitTesting.Name
         [Test()]
         public void GenerateFullName_NoArgs_TwoWordsSeperatedBySpaceAreProvided()
         {
-            string fullName = _systemUnderTest.GenerateFullName();
+            string fullName = _systemUnderTest.FullName();
 
             string[] seperateWords = fullName.Split(' ');
 
