@@ -9,11 +9,10 @@ namespace Bickers.Twaddle.Containers.Lorem
     /// </summary>
     public class FileSystemWordContainer : WordListContainer
     {
-
-        string _targetFileLocation = null;
+        private string _targetFileLocation = null;
 
         /// <summary>
-        /// The location of the text file that will be read. Each word must start on its own line for the word to show up seperately 
+        /// The location of the text file that will be read. Each word must start on its own line for the word to show up seperately
         /// </summary>
         /// <param name="targetFileLocation"></param>
         public FileSystemWordContainer(string targetFileLocation)
@@ -26,7 +25,6 @@ namespace Bickers.Twaddle.Containers.Lorem
             _targetFileLocation = targetFileLocation;
         }
 
-
         /// <summary>
         /// Gets the word list that has been found from the target file location
         /// </summary>
@@ -34,7 +32,6 @@ namespace Bickers.Twaddle.Containers.Lorem
         /// <exception cref="FileNotFoundException"></exception>
         public override List<string> GetWordList()
         {
-
             if (!File.Exists(_targetFileLocation))
             {
                 throw new FileNotFoundException();
@@ -46,7 +43,4 @@ namespace Bickers.Twaddle.Containers.Lorem
             return lines.ToList();
         }
     }
-
-
-
 }

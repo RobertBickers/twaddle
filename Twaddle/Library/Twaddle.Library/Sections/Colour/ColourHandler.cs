@@ -9,7 +9,6 @@ namespace Bickers.Twaddle.Sections.Colour
         internal static Color FromHex(this string hex)
         {
             FromHex(hex, out var a, out var r, out var g, out var b);
-
             return Color.FromArgb(a, r, g, b);
         }
 
@@ -32,21 +31,16 @@ namespace Bickers.Twaddle.Sections.Colour
             hex = hex.StartsWith("#") ? hex.Substring(1) : hex;
 
             if (hex.Length == 8)
-            {
                 return hex;
-            }
 
             if (hex.Length == 6)
-            {
                 return hex + "FF";
-            }
 
             if (hex.Length < 3 || hex.Length > 4)
-            {
                 return null;
-            }
 
             //Handle values like #3B2
+
             string red = char.ToString(hex[0]);
             string green = char.ToString(hex[1]);
             string blue = char.ToString(hex[2]);

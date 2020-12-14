@@ -14,7 +14,7 @@ namespace Bickers.Twaddle.Generators
         /// <returns></returns>
         public DateTime GenerateDate(DateTime? startDate, DateTime? endDate)
         {
-			if (startDate != null && endDate != null)
+            if (startDate != null && endDate != null)
             {
                 TimeSpan timeSpan = (TimeSpan)(endDate - startDate);
                 double maximumNumberOfDays = timeSpan.TotalDays;

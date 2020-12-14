@@ -12,6 +12,4 @@ namespace Bickers.Twaddle.Containers.Lorem
             return "Smith,Brown,Wilson,Robertson,Campbell,Stewart,Thomson,Anderson,Scott,Macdonald,Reid,Murray,Clark,Taylor,Ross,Young,Paterson,Watson,Mitchell,Fraser,Walker,Henderson,Morrison".Split(',').ToList();
         }
     }
-
-
 }

@@ -24,6 +24,5 @@ namespace Bickers.Twaddle.Core
         public static IWordGenerator Word => _configuration.WordConfig;
 
         public static INameGenerator Name => _configuration.NameGenerator;
-
     }
 }

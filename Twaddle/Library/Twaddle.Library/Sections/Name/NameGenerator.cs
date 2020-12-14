@@ -8,19 +8,18 @@ namespace Bickers.Twaddle.Generators
     {
         private static Random _randomSeed = new Random();
 
-        WordListContainer _firstNameWordListContainer = null;
-        WordListContainer _lastNameContainer = null;
+        private WordListContainer _firstNameWordListContainer = null;
+        private WordListContainer _lastNameContainer = null;
 
         public NameGenerator() : this(null, null)
         {
-
         }
+
         public NameGenerator(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
         {
             _firstNameWordListContainer = firstNameWordListContainer != null ? firstNameWordListContainer : new FirstNameWordContainer();
             _lastNameContainer = lastNameWordContainer != null ? lastNameWordContainer : new LastNameWordContainer();
         }
-
 
         public virtual string GenerateFirstName()
         {
@@ -52,6 +51,5 @@ namespace Bickers.Twaddle.Generators
             _firstNameWordListContainer = firstNameWordListContainer != null ? firstNameWordListContainer : new FirstNameWordContainer();
             _lastNameContainer = lastNameWordContainer != null ? lastNameWordContainer : new LastNameWordContainer();
         }
-
     }
 }

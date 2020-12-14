@@ -8,15 +8,15 @@ namespace Bickers.Twaddle.Generators
     public interface IColourGenerator
     {
         /// <summary>
-        /// Generates a string colour type
-        /// </summary>
-        /// <returns></returns>
-        string GenerateColourString();
-
-        /// <summary>
         /// Generates a random colour
         /// </summary>
         /// <returns></returns>
         Color GenerateColour();
+
+        /// <summary>
+        /// Generates a string colour type
+        /// </summary>
+        /// <returns></returns>
+        string GenerateColourString();
     }
 }
