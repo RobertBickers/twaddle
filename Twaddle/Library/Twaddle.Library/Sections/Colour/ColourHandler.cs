@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Globalization;
 
-namespace Bickers.Twaddle.Sections.Colour
+namespace Codetreehouse.Twaddle.Sections.Colour
 {
     internal static class ColourHandlerExtensions
     {

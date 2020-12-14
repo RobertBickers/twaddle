@@ -1,6 +1,6 @@
-﻿using Bickers.Twaddle.Containers;
+﻿using Codetreehouse.Twaddle.Containers;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Twaddle.Generators
 {
     public interface INameGenerator
     {

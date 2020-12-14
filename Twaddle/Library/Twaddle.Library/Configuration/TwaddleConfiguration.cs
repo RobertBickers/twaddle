@@ -1,47 +1,60 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Generators;
 using System;
 
-namespace Bickers.Twaddle.Configuration
+namespace Codetreehouse.Twaddle.Configuration
 {
+    public class InjectableConfiguration : ITwaddleConfiguration
+    {
+        public InjectableConfiguration(
+            ICredentialGenerator credentialGenerator,
+            IDateGenerator dateGenerator,
+            IPhoneGenerator phoneGenerator,
+            IColourGenerator colourGenerator,
+            IWordGenerator wordGenerator,
+            INameGenerator nameGenerator)
+        {
+            CredentialConfig = credentialGenerator;
+            DateConfig = dateGenerator;
+            PhoneConfig = phoneGenerator;
+            ColourConfig = colourGenerator;
+            WordConfig = wordGenerator;
+            NameGenerator = nameGenerator;
+        }
+
+        public ICredentialGenerator CredentialConfig { get; }
+
+        public IDateGenerator DateConfig { get; }
+
+        public IPhoneGenerator PhoneConfig { get; }
+
+        public IColourGenerator ColourConfig { get; }
+
+        public IWordGenerator WordConfig { get; }
+
+        public INameGenerator NameGenerator { get; }
+    }
+
     /// <summary>
     /// Default Twaddle Configuration
     /// </summary>
-    public class TwaddleConfiguration : ITwaddleConfiguration
+    public class TwaddleConfiguration : InjectableConfiguration, ITwaddleConfiguration
     {
-        private static readonly Lazy<ICredentialGenerator> credentialLazyValue = new Lazy<ICredentialGenerator>(()
-            => new CredentialGenerator());
+        public TwaddleConfiguration(
+            ICredentialGenerator? credentialGenerator,
+            IDateGenerator? dateGenerator,
+            IPhoneGenerator? phoneGenerator,
+            IColourGenerator? colourGenerator,
+            IWordGenerator? wordGenerator,
+            INameGenerator? nameGenerator)
+            : base(
+                  credentialGenerator ?? new CredentialGenerator(),
+                  dateGenerator ?? new DateGenerator(),
+                  phoneGenerator ?? new PhoneGenerator(),
+                  colourGenerator ?? new ColourGenerator(),
+                  wordGenerator ?? new WordGenerator(),
+                  nameGenerator ?? new NameGenerator())
+        {
+        }
 
-        private static readonly Lazy<IDateGenerator> dateLazyValue = new Lazy<IDateGenerator>(()
-            => new DateGenerator());
-
-        private static readonly Lazy<IPhoneGenerator> phoneLazyValue = new Lazy<IPhoneGenerator>(()
-            => new PhoneGenerator());
-
-        private static readonly Lazy<IColourGenerator> colourLazyValue = new Lazy<IColourGenerator>(()
-            => new ColourGenerator());
-
-        private static readonly Lazy<IWordGenerator> wordLazyValue = new Lazy<IWordGenerator>(()
-            => new WordGenerator());
-
-        private static readonly Lazy<INameGenerator> nameLazyValue = new Lazy<INameGenerator>(()
-            => new NameGenerator());
-
-        public virtual ICredentialGenerator CredentialConfig
-            => credentialLazyValue.Value;
-
-        public virtual IDateGenerator DateConfig
-            => dateLazyValue.Value;
-
-        public virtual IPhoneGenerator PhoneConfig
-            => phoneLazyValue.Value;
-
-        public virtual IColourGenerator ColourConfig
-            => colourLazyValue.Value;
-
-        public virtual IWordGenerator WordConfig
-            => wordLazyValue.Value;
-
-        public virtual INameGenerator NameGenerator
-            => nameLazyValue.Value;
     }
 }

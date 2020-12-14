@@ -1,4 +1,5 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Core;
+using Codetreehouse.Twaddle.Generators;
 using FluentAssertions;
 using NUnit.Framework;
 

@@ -1,8 +1,8 @@
-﻿using Bickers.Twaddle.Containers;
-using Bickers.Twaddle.Containers.Lorem;
+﻿using Codetreehouse.Twaddle.Containers;
+using Codetreehouse.Twaddle.Containers.Lorem;
 using System;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Twaddle.Generators
 {
     public class NameGenerator : INameGenerator
     {

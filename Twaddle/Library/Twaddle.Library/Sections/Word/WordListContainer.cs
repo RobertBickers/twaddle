@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bickers.Twaddle.Containers
+namespace Codetreehouse.Twaddle.Containers
 {
     public abstract class WordListContainer
     {

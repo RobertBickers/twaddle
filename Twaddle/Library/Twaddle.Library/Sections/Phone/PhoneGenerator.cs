@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Twaddle.Generators
 {
     internal class PhoneGenerator : IPhoneGenerator
     {

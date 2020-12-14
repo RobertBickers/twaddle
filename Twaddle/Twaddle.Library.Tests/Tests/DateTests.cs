@@ -1,4 +1,4 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Generators;
 using NUnit.Framework;
 using System;
 

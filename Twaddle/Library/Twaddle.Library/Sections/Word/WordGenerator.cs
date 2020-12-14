@@ -1,9 +1,9 @@
-﻿using Bickers.Twaddle.Containers;
-using Bickers.Twaddle.Containers.Lorem;
+﻿using Codetreehouse.Twaddle.Containers;
+using Codetreehouse.Twaddle.Containers.Lorem;
 using System;
 using System.Collections.Generic;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Twaddle.Generators
 {
     internal class WordGenerator : IWordGenerator
     {

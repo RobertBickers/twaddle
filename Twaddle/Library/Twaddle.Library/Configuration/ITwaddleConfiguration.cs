@@ -1,6 +1,6 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Generators;
 
-namespace Bickers.Twaddle.Configuration
+namespace Codetreehouse.Twaddle.Configuration
 {
     public interface ITwaddleConfiguration
     {

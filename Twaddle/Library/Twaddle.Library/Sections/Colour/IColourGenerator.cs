@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Twaddle.Generators
 {
     /// <summary>
     /// Handles the generation of colours

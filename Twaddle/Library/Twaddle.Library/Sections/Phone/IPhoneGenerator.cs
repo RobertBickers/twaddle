@@ -1,4 +1,4 @@
-﻿namespace Bickers.Twaddle.Generators
+﻿namespace Codetreehouse.Twaddle.Generators
 {
     public interface IPhoneGenerator
     {

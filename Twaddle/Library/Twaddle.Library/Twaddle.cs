@@ -1,28 +1,51 @@
-﻿using Bickers.Twaddle.Configuration;
-using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Configuration;
+using Codetreehouse.Twaddle.Generators;
+using System;
 
-namespace Bickers.Twaddle.Core
+namespace Codetreehouse.Twaddle.Core
 {
-    public static class Twaddle
+    public class Twaddle : ITwaddle
     {
-        static Twaddle()
-            => (_configuration) = (new TwaddleConfiguration());
+        public virtual ITwaddleConfiguration Configuration { get; }
 
-        private static ITwaddleConfiguration _configuration;
+        internal Twaddle(ITwaddleConfiguration configuration)
+            => (Configuration) = (configuration);
 
-        public static void OverrideConfiguration(ITwaddleConfiguration configuration)
-            => (_configuration) = (configuration);
+        public static ITwaddle WithDefaults
+             => new Twaddle(new TwaddleConfiguration(null, null, null, null, null, null));
 
-        public static ICredentialGenerator Profile => _configuration.CredentialConfig;
+        public static ITwaddle WithConfiguration(
+            ICredentialGenerator? credentialGenerator,
+            IDateGenerator? dateGenerator,
+            IPhoneGenerator? phoneGenerator,
+            IColourGenerator? colourGenerator,
+            IWordGenerator? wordGenerator,
+            INameGenerator? nameGenerator)
+            => new Twaddle(
+                new InjectableConfiguration(
+                    credentialGenerator,
+                    dateGenerator,
+                    phoneGenerator,
+                    colourGenerator,
+                    wordGenerator,
+                    nameGenerator
+                    )
+                );
 
-        public static IDateGenerator Date => _configuration.DateConfig;
+        public static ITwaddle WithConfiguration(
+            ITwaddleConfiguration configuration)
+            => new Twaddle(configuration);
 
-        public static IPhoneGenerator Phone => _configuration.PhoneConfig;
+        public ICredentialGenerator Profile => Configuration.CredentialConfig;
 
-        public static IColourGenerator Colour => _configuration.ColourConfig;
+        public IDateGenerator Date => Configuration.DateConfig;
 
-        public static IWordGenerator Word => _configuration.WordConfig;
+        public IPhoneGenerator Phone => Configuration.PhoneConfig;
 
-        public static INameGenerator Name => _configuration.NameGenerator;
+        public IColourGenerator Colour => Configuration.ColourConfig;
+
+        public IWordGenerator Word => Configuration.WordConfig;
+
+        public INameGenerator Name => Configuration.NameGenerator;
     }
 }

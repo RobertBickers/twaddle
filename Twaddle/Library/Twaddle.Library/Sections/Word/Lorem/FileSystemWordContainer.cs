@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace Bickers.Twaddle.Containers.Lorem
+namespace Codetreehouse.Twaddle.Containers.Lorem
 {
     /// <summary>
     /// Gets the list of words by reading each line of a text file

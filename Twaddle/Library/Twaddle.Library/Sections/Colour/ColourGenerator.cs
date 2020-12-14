@@ -1,8 +1,8 @@
-﻿using Bickers.Twaddle.Sections.Colour;
+﻿using Codetreehouse.Twaddle.Sections.Colour;
 using System;
 using System.Drawing;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Twaddle.Generators
 {
     /// <summary>
     /// Handles the generation of colour strings

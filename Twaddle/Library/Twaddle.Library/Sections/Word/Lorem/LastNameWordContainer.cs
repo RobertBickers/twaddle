@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Bickers.Twaddle.Containers.Lorem
+namespace Codetreehouse.Twaddle.Containers.Lorem
 {
     public class LastNameWordContainer : WordListContainer
     {
