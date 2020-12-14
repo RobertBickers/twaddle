@@ -1,5 +1,4 @@
 ﻿using Codetreehouse.Twaddle.Generators;
-using System;
 
 namespace Codetreehouse.Twaddle.Configuration
 {
@@ -55,6 +54,5 @@ namespace Codetreehouse.Twaddle.Configuration
                   nameGenerator ?? new NameGenerator())
         {
         }
-
     }
 }

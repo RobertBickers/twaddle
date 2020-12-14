@@ -17,12 +17,12 @@ namespace Codetreehouse.Twaddle.Generators
 
         public NameGenerator(WordListContainer? firstNameWordListContainer, WordListContainer? lastNameWordContainer)
         {
-            _firstNameWordListContainer 
-                = firstNameWordListContainer 
+            _firstNameWordListContainer
+                = firstNameWordListContainer
                 ?? new FirstNameWordContainer();
-            
-            _lastNameContainer 
-                = lastNameWordContainer 
+
+            _lastNameContainer
+                = lastNameWordContainer
                 ?? new LastNameWordContainer();
         }
 

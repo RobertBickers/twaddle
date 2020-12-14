@@ -1,5 +1,4 @@
-﻿using Codetreehouse.Twaddle.Core;
-using Codetreehouse.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Generators;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
@@ -16,7 +15,6 @@ namespace Tests.UnitTesting.Credentials
         public CredentialTest()
         {
             _systemUnderTest = new CredentialGenerator();
-
         }
 
         [Test()]

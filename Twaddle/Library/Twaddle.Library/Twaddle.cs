@@ -1,6 +1,5 @@
 ﻿using Codetreehouse.Twaddle.Configuration;
 using Codetreehouse.Twaddle.Generators;
-using System;
 
 namespace Codetreehouse.Twaddle.Core
 {

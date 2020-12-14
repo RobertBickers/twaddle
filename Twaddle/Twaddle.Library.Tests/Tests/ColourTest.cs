@@ -1,5 +1,4 @@
-﻿using Codetreehouse.Twaddle.Core;
-using Codetreehouse.Twaddle.Generators;
+﻿using Codetreehouse.Twaddle.Generators;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -53,9 +52,6 @@ namespace Tests.UnitTesting.Color
             System.Drawing.Color color = _systemUnderTest.GenerateColour();
 
             color.IsEmpty.Should().BeFalse();
-            color.R.Should().NotBe(0);
-            color.G.Should().NotBe(0);
-            color.B.Should().NotBe(0);
         }
     }
 }
