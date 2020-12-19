@@ -2,18 +2,18 @@
 
 namespace Codetreehouse.Twaddle.Configuration
 {
-    public interface ITwaddleConfiguration
-    {
-        ICredentialGenerator CredentialConfig { get; }
+	public interface ITwaddleConfiguration
+	{
+		ICredentialGenerator CredentialConfig { get; }
 
-        IDateGenerator DateConfig { get; }
+		IDateGenerator DateConfig { get; }
 
-        IPhoneGenerator PhoneConfig { get; }
+		IPhoneGenerator PhoneConfig { get; }
 
-        IColourGenerator ColourConfig { get; }
+		IColourGenerator ColourConfig { get; }
 
-        IWordGenerator WordConfig { get; }
+		IWordGenerator WordConfig { get; }
 
-        INameGenerator NameGenerator { get; }
-    }
+		INameGenerator NameGenerator { get; }
+	}
 }

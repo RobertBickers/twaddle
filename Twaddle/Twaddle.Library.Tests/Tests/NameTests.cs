@@ -4,48 +4,48 @@ using NUnit.Framework;
 
 namespace Tests.UnitTesting.Name
 {
-    [TestFixture]
-    public class NameTests
-    {
-        private readonly INameGenerator _systemUnderTest;
+	[TestFixture]
+	public class NameTests
+	{
+		private readonly INameGenerator _systemUnderTest;
 
-        public NameTests()
-        {
-            _systemUnderTest = new NameGenerator();
-        }
+		public NameTests()
+		{
+			_systemUnderTest = new NameGenerator();
+		}
 
-        [Test()]
-        public void GenerateFirstName_NoArgs_StringReturned()
-        {
-            string firstName = _systemUnderTest.FirstName();
+		[Test()]
+		public void GenerateFirstName_NoArgs_StringReturned()
+		{
+			string firstName = _systemUnderTest.FirstName();
 
-            firstName.Should().NotBeNullOrEmpty();
-        }
+			firstName.Should().NotBeNullOrEmpty();
+		}
 
-        [Test()]
-        public void GenerateSecondName_NoArgs_StringReturned()
-        {
-            string secondName = _systemUnderTest.SecondName();
+		[Test()]
+		public void GenerateSecondName_NoArgs_StringReturned()
+		{
+			string secondName = _systemUnderTest.SecondName();
 
-            secondName.Should().NotBeNullOrEmpty();
-        }
+			secondName.Should().NotBeNullOrEmpty();
+		}
 
-        [Test()]
-        public void GenerateFullName_NoArgs_StringReturned()
-        {
-            string fullName = _systemUnderTest.FullName();
+		[Test()]
+		public void GenerateFullName_NoArgs_StringReturned()
+		{
+			string fullName = _systemUnderTest.FullName();
 
-            fullName.Should().NotBeNullOrEmpty();
-        }
+			fullName.Should().NotBeNullOrEmpty();
+		}
 
-        [Test()]
-        public void GenerateFullName_NoArgs_TwoWordsSeperatedBySpaceAreProvided()
-        {
-            string fullName = _systemUnderTest.FullName();
+		[Test()]
+		public void GenerateFullName_NoArgs_TwoWordsSeperatedBySpaceAreProvided()
+		{
+			string fullName = _systemUnderTest.FullName();
 
-            string[] seperateWords = fullName.Split(' ');
+			string[] seperateWords = fullName.Split(' ');
 
-            seperateWords.Should().HaveCount(2);
-        }
-    }
+			seperateWords.Should().HaveCount(2);
+		}
+	}
 }

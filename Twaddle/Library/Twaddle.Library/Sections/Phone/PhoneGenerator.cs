@@ -2,18 +2,18 @@
 
 namespace Codetreehouse.Twaddle.Generators
 {
-    internal class PhoneGenerator : IPhoneGenerator
-    {
-        private static Random randomSeed = new Random();
+	internal class PhoneGenerator : IPhoneGenerator
+	{
+		private static Random randomSeed = new Random();
 
-        public string GeneratePhoneNumber(string prefix = "")
-        {
-            string phoneNumber = prefix;
+		public string GeneratePhoneNumber(string prefix = "")
+		{
+			string phoneNumber = prefix;
 
-            while (phoneNumber.Length < 11)
-                phoneNumber += randomSeed.Next(0, 10);
+			while (phoneNumber.Length < 11)
+				phoneNumber += randomSeed.Next(0, 10);
 
-            return phoneNumber.ToString();
-        }
-    }
+			return phoneNumber.ToString();
+		}
+	}
 }

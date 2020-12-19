@@ -2,14 +2,14 @@
 
 namespace Codetreehouse.Twaddle.Generators
 {
-    public interface INameGenerator
-    {
-        void Setup(WordListContainer firstNameContainer, WordListContainer lastNameContainer);
+	public interface INameGenerator
+	{
+		void Setup(WordListContainer firstNameContainer, WordListContainer lastNameContainer);
 
-        string FirstName();
+		string FirstName();
 
-        string SecondName();
+		string SecondName();
 
-        string FullName();
-    }
+		string FullName();
+	}
 }
