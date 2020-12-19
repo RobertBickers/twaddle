@@ -2,7 +2,7 @@
 using Codetreehouse.Twaddle.Containers.Lorem;
 using System;
 
-namespace Codetreehouse.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
 	public class NameGenerator : INameGenerator
 	{
@@ -26,17 +26,17 @@ namespace Codetreehouse.Twaddle.Generators
 				?? new LastNameWordContainer();
 		}
 
-		public virtual string FirstName()
+		public virtual string GenerateFirstName()
 		{
 			return _firstNameWordListContainer.WordList[_randomSeed.Next(_firstNameWordListContainer.Words)];
 		}
 
-		public virtual string FullName()
+		public virtual string GenerateFullName()
 		{
-			return FirstName() + " " + SecondName();
+			return GenerateFirstName() + " " + GenerateSecondName();
 		}
 
-		public virtual string SecondName()
+		public virtual string GenerateSecondName()
 		{
 			return _lastNameContainer.WordList[_randomSeed.Next(_lastNameContainer.Words)];
 		}

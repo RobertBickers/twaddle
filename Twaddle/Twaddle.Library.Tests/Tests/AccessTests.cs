@@ -50,7 +50,7 @@ namespace Tests.UnitTesting.Color
 			else
 				Assert.Fail();
 
-			Twaddle.WithDefaults.Name.FirstName();
+			Twaddle.WithDefaults.Name.GenerateFirstName();
 		}
 
 		[Test]

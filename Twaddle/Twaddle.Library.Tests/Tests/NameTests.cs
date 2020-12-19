@@ -1,4 +1,4 @@
-﻿using Codetreehouse.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -17,7 +17,7 @@ namespace Tests.UnitTesting.Name
 		[Test()]
 		public void GenerateFirstName_NoArgs_StringReturned()
 		{
-			string firstName = _systemUnderTest.FirstName();
+			string firstName = _systemUnderTest.GenerateFirstName();
 
 			firstName.Should().NotBeNullOrEmpty();
 		}
@@ -25,7 +25,7 @@ namespace Tests.UnitTesting.Name
 		[Test()]
 		public void GenerateSecondName_NoArgs_StringReturned()
 		{
-			string secondName = _systemUnderTest.SecondName();
+			string secondName = _systemUnderTest.GenerateSecondName();
 
 			secondName.Should().NotBeNullOrEmpty();
 		}
@@ -33,7 +33,7 @@ namespace Tests.UnitTesting.Name
 		[Test()]
 		public void GenerateFullName_NoArgs_StringReturned()
 		{
-			string fullName = _systemUnderTest.FullName();
+			string fullName = _systemUnderTest.GenerateFullName();
 
 			fullName.Should().NotBeNullOrEmpty();
 		}
@@ -41,7 +41,7 @@ namespace Tests.UnitTesting.Name
 		[Test()]
 		public void GenerateFullName_NoArgs_TwoWordsSeperatedBySpaceAreProvided()
 		{
-			string fullName = _systemUnderTest.FullName();
+			string fullName = _systemUnderTest.GenerateFullName();
 
 			string[] seperateWords = fullName.Split(' ');
 

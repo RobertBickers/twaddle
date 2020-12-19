@@ -3,7 +3,7 @@ using Codetreehouse.Twaddle.Containers.Lorem;
 using System;
 using System.Collections.Generic;
 
-namespace Codetreehouse.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
 	internal class WordGenerator : IWordGenerator
 	{

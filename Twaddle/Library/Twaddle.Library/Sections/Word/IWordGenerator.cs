@@ -1,6 +1,6 @@
 ﻿using Codetreehouse.Twaddle.Containers;
 
-namespace Codetreehouse.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
 	public interface IWordGenerator
 	{

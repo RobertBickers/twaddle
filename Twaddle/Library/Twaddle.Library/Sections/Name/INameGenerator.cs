@@ -1,15 +1,15 @@
 ﻿using Codetreehouse.Twaddle.Containers;
 
-namespace Codetreehouse.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
 	public interface INameGenerator
 	{
 		void Setup(WordListContainer firstNameContainer, WordListContainer lastNameContainer);
 
-		string FirstName();
+		string GenerateFirstName();
 
-		string SecondName();
+		string GenerateSecondName();
 
-		string FullName();
+		string GenerateFullName();
 	}
 }

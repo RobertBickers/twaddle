@@ -22,7 +22,6 @@
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<ItemGroup>
-		<Folder Include="Configuration\" />
 		<Folder Include="Sections\" />
 	</ItemGroup>
 	<ItemGroup>

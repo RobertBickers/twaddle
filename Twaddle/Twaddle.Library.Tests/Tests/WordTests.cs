@@ -1,4 +1,4 @@
-﻿using Codetreehouse.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using FluentAssertions;
 using NUnit.Framework;
 
