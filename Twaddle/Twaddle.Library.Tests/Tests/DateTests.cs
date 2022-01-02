@@ -1,4 +1,4 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using NUnit.Framework;
 using System;
 
@@ -7,7 +7,7 @@ namespace Tests.UnitTesting.Date
 	[TestFixture]
 	public class DateTests
 	{
-		readonly IDateGenerator _systemUnderTest;
+		private readonly IDateGenerator _systemUnderTest;
 
 		public DateTests()
 		{

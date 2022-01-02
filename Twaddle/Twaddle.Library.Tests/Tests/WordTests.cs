@@ -1,4 +1,4 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -7,7 +7,7 @@ namespace Tests.UnitTesting.Word
 	[TestFixture]
 	public class WordTests
 	{
-		readonly IWordGenerator _systemUnderTest;
+		private readonly IWordGenerator _systemUnderTest;
 
 		public WordTests()
 		{

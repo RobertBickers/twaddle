@@ -1,4 +1,4 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
@@ -10,7 +10,7 @@ namespace Tests.UnitTesting.Credentials
 	[TestFixture]
 	public class CredentialTest
 	{
-		readonly ICredentialGenerator _systemUnderTest;
+		private readonly ICredentialGenerator _systemUnderTest;
 
 		public CredentialTest()
 		{
@@ -47,8 +47,7 @@ namespace Tests.UnitTesting.Credentials
 
 			Debug.WriteLine("Beginning stopwatch...");
 			Stopwatch sw = Stopwatch.StartNew();
-			Parallel.For(0, 5000, i =>
-			{
+			Parallel.For(0, 5000, i => {
 				string password = _systemUnderTest.GeneratePassword(true, maxCharacters, minCharacters);
 				Debug.WriteLine("Parallel - Generated password length: " + password.Length);
 				password.Length.Should().BeInRange(20, 100);

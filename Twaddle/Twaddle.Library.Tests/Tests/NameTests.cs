@@ -1,4 +1,4 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -7,7 +7,7 @@ namespace Tests.UnitTesting.Name
 	[TestFixture]
 	public class NameTests
 	{
-		INameGenerator _systemUnderTest;
+		private readonly INameGenerator _systemUnderTest;
 
 		public NameTests()
 		{

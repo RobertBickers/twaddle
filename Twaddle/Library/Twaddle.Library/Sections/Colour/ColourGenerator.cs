@@ -1,15 +1,15 @@
-﻿using Bickers.Twaddle.Sections.Colour;
+﻿using Codetreehouse.Twaddle.Sections.Colour;
 using System;
 using System.Drawing;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
 	/// <summary>
 	/// Handles the generation of colour strings
 	/// </summary>
 	public class ColourGenerator : IColourGenerator
 	{
-		private static Random random = new Random();
+		private static readonly Random random = new Random();
 
 		/// <summary>
 		/// Generates a random colour string in hex format

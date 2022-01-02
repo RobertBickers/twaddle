@@ -1,4 +1,4 @@
-﻿using Bickers.Twaddle.Generators;
+﻿using Codetreehouse.Generation;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -7,9 +7,9 @@ namespace Tests.UnitTesting.Phone
 	[TestFixture]
 	public class PhoneTests
 	{
-		readonly IPhoneGenerator _systemUnderTest;
+		private readonly IPhoneGenerator _systemUnderTest;
 
-		const string _phoneNumberPrepend = "+44";
+		private const string _phoneNumberPrepend = "+44";
 
 		public PhoneTests()
 		{

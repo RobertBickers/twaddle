@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
 	internal class CredentialGenerator : ICredentialGenerator
 	{

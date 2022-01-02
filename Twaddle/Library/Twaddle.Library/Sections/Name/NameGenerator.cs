@@ -1,57 +1,60 @@
-﻿using Bickers.Twaddle.Containers;
-using Bickers.Twaddle.Containers.Lorem;
+﻿using Codetreehouse.Twaddle.Containers;
+using Codetreehouse.Twaddle.Containers.Lorem;
 using System;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
-    public class NameGenerator : INameGenerator
-    {
-        private static Random _randomSeed = new Random();
+	public class NameGenerator : INameGenerator
+	{
+		private static readonly Random _randomSeed = new Random();
 
-        WordListContainer _firstNameWordListContainer = null;
-        WordListContainer _lastNameContainer = null;
+		private WordListContainer _firstNameWordListContainer;
+		private WordListContainer _lastNameContainer;
 
-        public NameGenerator() : this(null, null)
-        {
+		public NameGenerator() : this(null, null)
+		{
+		}
 
-        }
-        public NameGenerator(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
-        {
-            _firstNameWordListContainer = firstNameWordListContainer != null ? firstNameWordListContainer : new FirstNameWordContainer();
-            _lastNameContainer = lastNameWordContainer != null ? lastNameWordContainer : new LastNameWordContainer();
-        }
+		public NameGenerator(WordListContainer? firstNameWordListContainer, WordListContainer? lastNameWordContainer)
+		{
+			_firstNameWordListContainer
+				= firstNameWordListContainer
+				?? new FirstNameWordContainer();
 
+			_lastNameContainer
+				= lastNameWordContainer
+				?? new LastNameWordContainer();
+		}
 
-        public virtual string GenerateFirstName()
-        {
-            return _firstNameWordListContainer.WordList[_randomSeed.Next(_firstNameWordListContainer.Words.Value)];
-        }
+		public virtual string GenerateFirstName()
+		{
+			return _firstNameWordListContainer.WordList[_randomSeed.Next(_firstNameWordListContainer.Words)];
+		}
 
-        public virtual string GenerateFullName()
-        {
-            return GenerateFirstName() + " " + GenerateSecondName();
-        }
+		public virtual string GenerateFullName()
+		{
+			return GenerateFirstName() + " " + GenerateSecondName();
+		}
 
-        public virtual string GenerateSecondName()
-        {
-            return _lastNameContainer.WordList[_randomSeed.Next(_lastNameContainer.Words.Value)];
-        }
+		public virtual string GenerateSecondName()
+		{
+			return _lastNameContainer.WordList[_randomSeed.Next(_lastNameContainer.Words)];
+		}
 
-        public void Setup(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
-        {
-            if (firstNameWordListContainer == null)
-            {
-                throw new ArgumentNullException(nameof(firstNameWordListContainer));
-            }
+		public void Setup(WordListContainer firstNameWordListContainer, WordListContainer lastNameWordContainer)
+		{
+			if (firstNameWordListContainer == null)
+			{
+				throw new ArgumentNullException(nameof(firstNameWordListContainer));
+			}
 
-            if (lastNameWordContainer == null)
-            {
-                throw new ArgumentNullException(nameof(lastNameWordContainer));
-            }
+			if (lastNameWordContainer == null)
+			{
+				throw new ArgumentNullException(nameof(lastNameWordContainer));
+			}
 
-            _firstNameWordListContainer = firstNameWordListContainer != null ? firstNameWordListContainer : new FirstNameWordContainer();
-            _lastNameContainer = lastNameWordContainer != null ? lastNameWordContainer : new LastNameWordContainer();
-        }
-
-    }
+			_firstNameWordListContainer = firstNameWordListContainer ?? new FirstNameWordContainer();
+			_lastNameContainer = lastNameWordContainer ?? new LastNameWordContainer();
+		}
+	}
 }

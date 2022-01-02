@@ -1,15 +1,15 @@
-﻿using Bickers.Twaddle.Containers;
+﻿using Codetreehouse.Twaddle.Containers;
 
-namespace Bickers.Twaddle.Generators
+namespace Codetreehouse.Generation
 {
-    public interface INameGenerator
-    {
-        void Setup(WordListContainer firstNameContainer, WordListContainer lastNameContainer);
+	public interface INameGenerator
+	{
+		void Setup(WordListContainer firstNameContainer, WordListContainer lastNameContainer);
 
-        string GenerateFirstName();
+		string GenerateFirstName();
 
-        string GenerateSecondName();
+		string GenerateSecondName();
 
-        string GenerateFullName();
-    }
+		string GenerateFullName();
+	}
 }
