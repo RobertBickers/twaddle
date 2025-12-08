@@ -26,14 +26,14 @@ jobs:
           done
       - name: Package NuGet
         run: |
-         cd Twaddle/Library/CodeTreehouse.Twaddle.Core
+         cd Twaddle/CodeTreehouse.Twaddle.Core
          echo "${{ github.event.inputs.version }}"
          dotnet pack --configuration Release --include-symbols --version-suffix "${{ github.event.inputs.version }}"
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.1
+        uses: actions/upload-artifact@v4
         with:
-         name: 'NuGet Package'
-         path: '**/Twaddle.Library/**/*.nupkg'
+          name: 'NuGet Package'
+          path: '**/CodeTreehouse.Twaddle.Core/**/*.nupkg'
          
         
 
