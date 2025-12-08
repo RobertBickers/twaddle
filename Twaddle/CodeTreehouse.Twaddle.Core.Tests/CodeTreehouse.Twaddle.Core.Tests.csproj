@@ -14,6 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Library\CodeTreehouse.Twaddle.Core\CodeTreehouse.Twaddle.Core.csproj" />
+        <ProjectReference Include="..\CodeTreehouse.Twaddle.Core\CodeTreehouse.Twaddle.Core.csproj" />
     </ItemGroup>
 </Project>
