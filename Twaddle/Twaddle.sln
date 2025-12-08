@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twaddle.Library", "Library\Twaddle.Library\Twaddle.Library.csproj", "{4965CD0C-2905-440A-9395-661E3131E7E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTreehouse.Twaddle.Core", "Library\CodeTreehouse.Twaddle.Core\CodeTreehouse.Twaddle.Core.csproj", "{4965CD0C-2905-440A-9395-661E3131E7E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twaddle.Library.Tests", "Twaddle.Library.Tests\Twaddle.Library.Tests.csproj", "{7A1DCEA8-4438-4AC4-9F18-E7134ED89BD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeTreehouse.Twaddle.Core.Tests", "CodeTreehouse.Twaddle.Core.Tests\CodeTreehouse.Twaddle.Core.Tests.csproj", "{7A1DCEA8-4438-4AC4-9F18-E7134ED89BD3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8FD8496-9906-43E5-BD8F-881E5325C4FF}"
 	ProjectSection(SolutionItems) = preProject
