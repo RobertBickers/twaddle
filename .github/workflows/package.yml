@@ -16,22 +16,24 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.100-preview.3.20216.6' # SDK Version to use.
-      - name: Run Unit Tests
+          dotnet-version: '10.0.100' # SDK Version to use.
+      - name: Run All Unit Test Projects
+        shell: bash
         run: |
-         cd Twaddle/Twaddle.Library.Tests
-         dotnet test --list-tests --configuration Release
-         dotnet test --configuration Release
+          find . -type f -iname '*Tests.csproj' | while read csproj; do
+            echo "Running tests in $csproj"
+            dotnet test "$csproj" --configuration Release
+          done
       - name: Package NuGet
         run: |
-         cd Twaddle/Library/Twaddle.Library
+         cd Twaddle/CodeTreehouse.Twaddle.Core
          echo "${{ github.event.inputs.version }}"
          dotnet pack --configuration Release --include-symbols --version-suffix "${{ github.event.inputs.version }}"
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.1
+        uses: actions/upload-artifact@v4
         with:
-         name: 'NuGet Package'
-         path: '**/Twaddle.Library/**/*.nupkg'
+          name: 'NuGet Package'
+          path: '**/CodeTreehouse.Twaddle.Core/**/*.nupkg'
          
         
 
